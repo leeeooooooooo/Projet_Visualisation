@@ -9,6 +9,9 @@
             <mxPoint x="480" y="520" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="jEvJ2ewWGz1gbq8sbJe9-60" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="zkfFHV4jXpPFQw0GAbJ--0" target="jEvJ2ewWGz1gbq8sbJe9-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="zkfFHV4jXpPFQw0GAbJ--0" value="Connexion.vue" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fontSize=16;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="70" y="50" width="290" height="290" as="geometry">
             <mxRectangle x="220" y="120" width="160" height="26" as="alternateBounds" />
@@ -54,7 +57,7 @@
           <mxGeometry y="34" width="140" height="76" as="geometry" />
         </mxCell>
         <mxCell id="jEvJ2ewWGz1gbq8sbJe9-10" value="Router" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fontSize=16;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="490" y="340" width="130" height="110" as="geometry">
+          <mxGeometry x="450" y="390" width="130" height="110" as="geometry">
             <mxRectangle x="220" y="120" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -77,6 +80,9 @@
         </mxCell>
         <mxCell id="jEvJ2ewWGz1gbq8sbJe9-19" value="+String obtenirTextePeriode()&#xa;+void initialiserGraphiques()&#xa;+async recupererDonnees()&#xa;+void mettreAJourGraphique(graphique, donnees, cleQuantite)&#xa;+void filtrerMoisDisponibles()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rounded=0;shadow=0;html=0;fontSize=15;" vertex="1" parent="jEvJ2ewWGz1gbq8sbJe9-16">
           <mxGeometry y="278" width="440" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="jEvJ2ewWGz1gbq8sbJe9-59" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="jEvJ2ewWGz1gbq8sbJe9-21" target="jEvJ2ewWGz1gbq8sbJe9-10">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="jEvJ2ewWGz1gbq8sbJe9-21" value="Panneau.vue" style="swimlane;fontStyle=2;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;fontSize=16;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="380" y="50" width="290" height="290" as="geometry">
