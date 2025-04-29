@@ -1,0 +1,49 @@
+{
+  "name": "projet_camping",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Un projet Vue.js pour superviser la consommation d'eau et d'électricité.",
+  "author": "",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test": "mocha --require @babel/register src/tests/ConfigurationForm.test.js"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "chart.js": "^4.4.9",
+    "core-js": "^3.8.3",
+    "cors": "^2.8.5",
+    "json-server": "^1.0.0-beta.3",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-vue-next": "^0.501.0",
+    "register-service-worker": "^1.7.2",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3"
+  },
+  "_moduleAliases": {
+    "@": "src"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/register": "^7.25.9",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-pwa": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/test-utils": "^2.4.6",
+    "axios": "^1.9.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "chai": "^5.2.0",
+    "mocha": "^11.1.0",
+    "module-alias": "^2.2.3",
+    "sinon": "^20.0.0",
+    "vue-template-compiler": "^2.7.16"
+  },
+  "_id": "projet_camping@1.0.0",
+  "license": "ISC",
+  "readme": "ERROR: No README data found!"
+}

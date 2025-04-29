@@ -1,0 +1,40 @@
+<template>
+  <div id="app">
+    <h1>{{ message }}</h1>
+    <button @click="changeMessage">Cliquez pour changer le message</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      message: 'rapport'
+    }
+  },
+  methods: {
+    changeMessage() {
+      this.message = 'rapport';
+    }
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>

@@ -1,0 +1,18 @@
+{
+  "campeurs": [
+    {
+      "id": 1,
+      "numero_emplacement": "42",
+      "mot_de_passe": "Admin132!",
+      "token": "fake-token-campeur-42"
+    }
+  ],
+  "gerants": [
+    {
+      "id": 1,
+      "identifiant": "admin",
+      "mot_de_passe": "Admin132!",
+      "token": "fake-token-gerant"
+    }
+  ]
+}

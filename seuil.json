@@ -1,0 +1,48 @@
+{
+  "campeur": [
+    {
+      "Numero_Emplacement": "12A",
+      "Mot_de_passe": "123456",
+      "Date_Sejour": "01/06/2025",
+      "date_Fin": "10/06/2025",
+      "id": "0c78"
+    },
+    {
+      "id": "63da",
+      "userType": "campeur",
+      "Identifiant": "",
+      "Mot_de_passe": "jeebaise",
+      "Date_Sejour": "2025-04-17",
+      "Date_Fin": "2025-05-11",
+      "Numero_Emplacement": 4895,
+      "Nom": ""
+    }
+  ],
+  "gerant": [
+    {
+      "Identifiant": "gerant01",
+      "Mot_de_passe": "password123",
+      "id": "476b"
+    }
+  ],
+  "seuils": [
+    {
+      "id": "1",
+      "Seuil_Eau_Matin": 10,
+      "Seuil_Eau_Midi": 20,
+      "Seuil_Eau_Soir": 15,
+      "Seuil_Electricite_Matin": 5,
+      "Seuil_Electricite_Midi": 10,
+      "Seuil_Electricite_Soir": 8
+    },
+    {
+      "id": "2466",
+      "Seuil_Eau_Matin": 45,
+      "Seuil_Eau_Midi": 53,
+      "Seuil_Eau_Soir": 98,
+      "Seuil_Electricite_Matin": 62,
+      "Seuil_Electricite_Midi": 31,
+      "Seuil_Electricite_Soir": 21
+    }
+  ]
+}
