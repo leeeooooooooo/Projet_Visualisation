@@ -1,150 +1,92 @@
 <template>
-  <div id="app" class="app-container">
-    <h1 class="header">Gestion du camping</h1>
+  <div id="app">
+    <h1>Gestion du camping</h1>
 
-    <!-- Interface de sélection -->
-    <div v-if="currentView === 'selection'" class="selection-container">
-      <h2 class="sub-header">Que souhaitez-vous faire ?</h2>
-      <div class="selection-buttons">
-        <button @click="showAccountForm" class="option-btn account-btn">
-          <i class="fas fa-user-plus"></i>
-          Créer un compte
-        </button>
-        <button @click="showThresholdForm" class="option-btn threshold-btn">
-          <i class="fas fa-sliders-h"></i>
-          Configurer les seuils
-        </button>
-      </div>
+    <div v-if="currentView === 'selection'">
+      <h2>Que faire ?</h2>
+      <button @click="showAccountForm">Créer un compte</button>
+      <button @click="showThresholdForm">Configurer les seuils</button>
     </div>
 
-    <!-- Formulaire de création de compte -->
-    <div v-if="currentView === 'account'" class="form-container">
-      <h2 class="sub-header">Création de compte</h2>
-      <div class="form-section">
-        <div class="form-group">
-          <label for="userType">Type de compte :</label>
-          <select v-model="accountForm.userType" @change="handleUserTypeChange" class="form-input" required>
-            <option value="campeur">Campeur</option>
-            <option value="gerant">Gérant</option>
-          </select>
-        </div>
+    <div v-if="currentView === 'account'">
+      <h2>Créer un compte</h2>
 
-        <div v-if="accountForm.userType === 'campeur'" class="campeur-form">
-          <div class="form-group">
-            <label for="Identifiant">Identifiant :</label>
-            <input v-model="accountForm.Identifiant" type="text" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="Mot_de_passe">Mot de passe :</label>
-            <input v-model="accountForm.Mot_de_passe" type="password" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="Date_Debut">Date de début de séjour :</label>
-            <input v-model="accountForm.Date_Debut" type="date" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="Date_Fin">Date de fin de séjour :</label>
-            <input v-model="accountForm.Date_Fin" type="date" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="Numero_Emplacement">Numéro d'emplacement :</label>
-            <input v-model.number="accountForm.Numero_Emplacement" type="number" class="form-input" required />
-          </div>
-        </div>
+      <label>Type de compte :
+        <select v-model="accountForm.userType" @change="handleUserTypeChange">
+          <option value="campeur">Campeur</option>
+          <option value="gerant">Gérant</option>
+        </select>
+      </label>
 
-        <div v-if="accountForm.userType === 'gerant'" class="gerant-form">
-          <div class="form-group">
-            <label for="Identifiant">Identifiant :</label>
-            <input v-model="accountForm.Identifiant" type="text" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="Mot_de_passe">Mot de passe :</label>
-            <input v-model="accountForm.Mot_de_passe" type="password" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="Email">Email :</label>
-            <input v-model="accountForm.Email" type="email" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="Telephone">Téléphone :</label>
-            <input v-model="accountForm.Telephone" type="tel" class="form-input" required />
-          </div>
-        </div>
-
-        <div class="form-actions">
-          <div class="action-buttons">
-            <button @click="backToSelection" class="back-btn">
-              <i class="fas fa-home"></i> Accueil
-            </button>
-            <button @click="switchToThresholds" class="switch-btn">
-              <i class="fas fa-exchange-alt"></i> Configurer les seuils
-            </button>
-          </div>
-          <button @click="submitForm" class="submit-btn">
-            <i class="fas fa-check"></i> Créer le compte
-          </button>
-        </div>
+      <div v-if="accountForm.userType === 'campeur'">
+        <label>Numéro d'emplacement :
+          <input v-model.number="accountForm.Numero_Emplacement" type="number" />
+        </label>
+        <label>Mot de passe :
+          <input v-model="accountForm.Mot_de_passe" type="password" />
+        </label>
+        <label>Date de début :
+          <input v-model="accountForm.Date_Debut" type="date" />
+        </label>
+        <label>Date de fin :
+          <input v-model="accountForm.Date_Fin" type="date" />
+        </label>
       </div>
+
+      <div v-if="accountForm.userType === 'gerant'">
+        <label>Identifiant :
+          <input v-model="accountForm.Identifiant" type="text" />
+        </label>
+        <label>Mot de passe :
+          <input v-model="accountForm.Mot_de_passe" type="password" />
+        </label>
+        <label>Email :
+          <input v-model="accountForm.Email" type="email" />
+        </label>
+        <label>Téléphone :
+          <input v-model="accountForm.Telephone" type="tel" />
+        </label>
+      </div>
+
+      <button @click="backToSelection">Retour</button>
+      <button @click="switchToThresholds">Configurer les seuils</button>
+      <button @click="submitForm">Valider</button>
     </div>
 
-    <!-- Formulaire de configuration des seuils -->
-    <div v-if="currentView === 'threshold'" class="form-container">
-      <h2 class="sub-header">Configuration des seuils</h2>
-      <div class="form-section">
-        <div class="threshold-group">
-          <h3 class="section-title">Seuils d'eau</h3>
-          <div class="form-group">
-            <label for="Seuil_Eau_Matin">Matin :</label>
-            <input v-model.number="thresholdsForm.Seuil_Eau_Matin" type="number" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="Seuil_Eau_Midi">Midi :</label>
-            <input v-model.number="thresholdsForm.Seuil_Eau_Midi" type="number" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="Seuil_Eau_Soir">Soir :</label>
-            <input v-model.number="thresholdsForm.Seuil_Eau_Soir" type="number" class="form-input" required />
-          </div>
-        </div>
+    <div v-if="currentView === 'threshold'">
+      <h2>Configurer les seuils</h2>
 
-        <div class="threshold-group">
-          <h3 class="section-title">Seuils d'électricité</h3>
-          <div class="form-group">
-            <label for="Seuil_Electricite_Matin">Matin :</label>
-            <input v-model.number="thresholdsForm.Seuil_Electricite_Matin" type="number" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="Seuil_Electricite_Midi">Midi :</label>
-            <input v-model.number="thresholdsForm.Seuil_Electricite_Midi" type="number" class="form-input" required />
-          </div>
-          <div class="form-group">
-            <label for="Seuil_Electricite_Soir">Soir :</label>
-            <input v-model.number="thresholdsForm.Seuil_Electricite_Soir" type="number" class="form-input" required />
-          </div>
-        </div>
+      <h3>Seuils d'eau</h3>
+      <label>Matin :
+        <input v-model.number="thresholdsForm.Seuil_Eau_Matin" type="number" />
+      </label>
+      <label>Midi :
+        <input v-model.number="thresholdsForm.Seuil_Eau_Midi" type="number" />
+      </label>
+      <label>Soir :
+        <input v-model.number="thresholdsForm.Seuil_Eau_Soir" type="number" />
+      </label>
 
-        <div class="form-actions">
-          <div class="action-buttons">
-            <button @click="backToSelection" class="back-btn">
-              <i class="fas fa-home"></i> Accueil
-            </button>
-            <button @click="switchToAccounts" class="switch-btn">
-              <i class="fas fa-exchange-alt"></i> Créer un compte
-            </button>
-          </div>
-          <button @click="submitThresholds" class="submit-btn">
-            <i class="fas fa-check"></i> Enregistrer
-          </button>
-        </div>
-      </div>
+      <h3>Seuils électricité</h3>
+      <label>Matin :
+        <input v-model.number="thresholdsForm.Seuil_Electricite_Matin" type="number" />
+      </label>
+      <label>Midi :
+        <input v-model.number="thresholdsForm.Seuil_Electricite_Midi" type="number" />
+      </label>
+      <label>Soir :
+        <input v-model.number="thresholdsForm.Seuil_Electricite_Soir" type="number" />
+      </label>
+
+      <button @click="backToSelection">Retour</button>
+      <button @click="switchToAccounts">Créer un compte</button>
+      <button @click="submitThresholds">Valider</button>
     </div>
 
-    <!-- Bouton pour retourner au tableau de bord -->
-    <button @click="goToPanneau" class="dashboard-btn">
-      <i class="fas fa-arrow-left"></i> Retour au tableau de bord
-    </button>
+    <button @click="goToPanneau">Retour au tableau de bord</button>
   </div>
 </template>
+
 
 <script>
 import axios from 'axios';
@@ -160,7 +102,7 @@ export default {
         Numero_Emplacement: null,
         Date_Debut: '',
         Date_Fin: '',
-        Identifiant: '',
+        Identifiant: '', // Gardé dans le data mais pas utilisé pour les campeurs
         Email: '',
         Telephone: ''
       },
@@ -203,26 +145,27 @@ export default {
     async submitForm() {
       try {
         const url = this.accountForm.userType === 'campeur'
-          ? 'http://172.20.0.39:5000/register/campeur'
-          : 'http://172.20.0.39:5000/register/gerant';
+          ? 'http://172.20.0.39:5000/creation/campeur'
+          : 'http://172.20.0.39:5000/creation/gerant';
           
         const formData = this.accountForm.userType === 'campeur'
           ? {
-              Identifiant: this.accountForm.Identifiant,
-              Mot_de_passe: this.accountForm.Mot_de_passe,
-              Date_Debut: this.accountForm.Date_Debut,
-              Date_Fin: this.accountForm.Date_Fin,
-              Numero_Emplacement: this.accountForm.Numero_Emplacement,
+              // Identifiant supprimé de l'envoi pour les campeurs
+              mot_de_passe: this.accountForm.Mot_de_passe,
+              date_debut: this.accountForm.Date_Debut,
+              date_fin: this.accountForm.Date_Fin,
+              numero_emplacement: this.accountForm.Numero_Emplacement,
             }
           : {
-              Identifiant: this.accountForm.Identifiant,
-              Mot_de_passe: this.accountForm.Mot_de_passe,
-              Email: this.accountForm.Email,
+              identifiant: this.accountForm.Identifiant,
+              mot_de_passe: this.accountForm.Mot_de_passe,
+              email: this.accountForm.Email,
               Telephone: this.accountForm.Telephone
             };
 
-        const response = await axios.post(url, formData, {
-          headers: { 'Content-Type': 'application/json' }
+            const response = await axios.post(url, formData, {
+            headers: { 'Content-Type': 'application/json' },
+            withCredentials: true
         });
 
         console.log('Réponse du serveur:', response.data);
@@ -237,7 +180,8 @@ export default {
       try {
         const url = 'http://172.20.0.39:5000/seuils/configurer';
         const response = await axios.post(url, this.thresholdsForm, {
-          headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        withCredentials: true
         });
 
         console.log('Réponse du serveur:', response.data);

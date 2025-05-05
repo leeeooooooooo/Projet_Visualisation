@@ -44,7 +44,7 @@ import authService from '@/services/authService'
 
 const router = useRouter()
 
-// Récupération du type d'utilisateur depuis le service
+// Récupération du type d'utilisateur depuis les cookies via le service
 const userType = computed(() => authService.getUserType() || 'campeur')
 
 // Affichage formaté du type d'utilisateur

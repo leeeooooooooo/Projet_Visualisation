@@ -1,0 +1,8 @@
+import Cookies from 'js-cookie';
+
+// Récupérer les données de session
+const userSession = Cookies.get('userSession');
+if (userSession) {
+  const sessionData = JSON.parse(userSession);
+  console.log(sessionData.role); // 'campeur' ou 'gerant'
+}

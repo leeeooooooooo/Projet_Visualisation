@@ -54,12 +54,10 @@ export default {
   methods: {
     async fetchData() {
       try {
-        const token = localStorage.getItem('token');
-        const config = { headers: { Authorization: `Bearer ${token}` } };
-        
+        // Suppression de la gestion du token
         const [waterRes, electricityRes] = await Promise.all([
-          axios.get('http://172.20.0.39:5000/consommation/eau', config),
-          axios.get('http://172.20.0.39:5000/consommation/electricite', config)
+          axios.get('http://172.20.0.39:5000/consommation/eau'),
+          axios.get('http://172.20.0.39:5000/consommation/electricite')
         ]);
         
         this.waterData = this.processData(waterRes.data);
@@ -153,6 +151,7 @@ export default {
   }
 };
 </script>
+
 
 <style scoped>
 .consumption-container {
