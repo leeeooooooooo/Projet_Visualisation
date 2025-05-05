@@ -98,7 +98,6 @@
 <script>
 import axios from 'axios';
 import Cookies from 'js-cookie'
-
 export default {
   name: 'LoginForm',
   data() {
@@ -149,15 +148,14 @@ export default {
         identifiant: this.campeur.numeroEmplacement,
         mot_de_passe: this.campeur.motDePasse
       }, {
-        withCredentials: true // Important pour que les cookies de session soient envoyés/reçus
+        withCredentials: true // Important pour que le cookie de session soit envoyé/reçu
       })
         .then(response => {
           // Gestion de la session réussie
           console.log('Connexion campeur réussie:', response.data);
 
-          // Stocker les informations de session dans les cookies
-          this.storeSession(response.data, 'campeur');
-
+          // Pas besoin de stocker les données de session côté client, le serveur gère la session via le cookie
+          
           // Rediriger vers le panneau du campeur avec son numéro d'emplacement
           this.$router.push(`/panneau?role=campeur`);
         })
@@ -178,15 +176,14 @@ export default {
         identifiant: this.gerant.identifiant,
         mot_de_passe: this.gerant.motDePasse
       }, {
-        withCredentials: true // Important pour que les cookies de session soient envoyés/reçus
+        withCredentials: true // Important pour que le cookie de session soit envoyé/reçu
       })
         .then(response => {
           // Gestion de la session réussie
           console.log('Connexion gérant réussie:', response.data);
 
-          // Stocker les informations de session dans les cookies
-          this.storeSession(response.data, 'gerant');
-
+          // Pas besoin de stocker les données de session côté client, le serveur gère la session via le cookie
+          
           // Rediriger vers le panneau du gérant
           this.$router.push('/panneau?role=gerant');
         })
@@ -197,19 +194,6 @@ export default {
         .finally(() => {
           this.isLoading = false;
         });
-    },
-
-    storeSession(userData, role) {
-      // Stocker les informations utilisateur dans les cookies
-      Cookies.set('userSession', JSON.stringify({
-        userData: userData,
-        role: role,
-        isAuthenticated: true,
-        timestamp: new Date().getTime()
-      }), { expires: 7 }); // Le cookie expire après 7 jours (ajustez si nécessaire)
-      
-      // Émettre un événement pour informer l'application de la connexion
-      this.$emit('login-success', { role });
     }
   }
 }
