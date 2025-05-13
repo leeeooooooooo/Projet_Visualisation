@@ -81,8 +81,8 @@
         <mxCell id="yxZzJRFGtM7eDR7PXihF-18" value="" style="shape=mxgraph.cisco.modems_and_phones.modem;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="469" y="290" width="89" height="37" as="geometry" />
         </mxCell>
-        <mxCell id="Ykoe7xLMUmudAW2wm1Gs-2" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;IP publique&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
-          <mxGeometry x="340" y="-120" width="150" height="30" as="geometry" />
+        <mxCell id="Ykoe7xLMUmudAW2wm1Gs-2" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;IP publique&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="509" y="-69" width="150" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
