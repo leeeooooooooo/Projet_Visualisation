@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.5">
   <diagram name="Page-1" id="jhf09ls7IOTQYogmO61J">
-    <mxGraphModel dx="1282" dy="1885" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1410" dy="1957" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -40,7 +40,7 @@
         <mxCell id="uptyACYF9q1GfJ_68p10-7" value="&lt;font&gt;Internet&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="480.5" y="-196" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="4uVbBjbMs5XL2IGZlxIM-5" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;endArrow=none;startFill=0;" edge="1" parent="1" source="yxZzJRFGtM7eDR7PXihF-3" target="4uVbBjbMs5XL2IGZlxIM-2">
+        <mxCell id="4uVbBjbMs5XL2IGZlxIM-5" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;endArrow=none;startFill=0;" parent="1" source="yxZzJRFGtM7eDR7PXihF-3" target="4uVbBjbMs5XL2IGZlxIM-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yxZzJRFGtM7eDR7PXihF-3" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
@@ -49,7 +49,7 @@
         <mxCell id="yxZzJRFGtM7eDR7PXihF-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;VLAN 10&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 18px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Administration&lt;/span&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="168" y="200" width="212.5" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="yxZzJRFGtM7eDR7PXihF-5" value="&lt;span style=&quot;font-size: 18px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;DMZ&lt;/span&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+        <mxCell id="yxZzJRFGtM7eDR7PXihF-5" value="&lt;span style=&quot;font-size: 18px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;VLAN 20 DMZ&lt;/span&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="740" y="11.75" width="180" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yxZzJRFGtM7eDR7PXihF-10" value="" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.tower_server;" parent="1" vertex="1">
@@ -94,16 +94,16 @@
         <mxCell id="83VA1FHLOg1mapcQ4TMc-35" value="PC 2" style="text;whiteSpace=wrap;html=1;align=center;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="292.5" y="341.5" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="4uVbBjbMs5XL2IGZlxIM-1" value="Adresse IP réseau&amp;nbsp;&lt;div&gt;192.168.10.0/28&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+        <mxCell id="4uVbBjbMs5XL2IGZlxIM-1" value="Adresse IP réseau&amp;nbsp;&lt;div&gt;192.168.10.0/28&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="1" vertex="1">
           <mxGeometry x="30" y="-7" width="270" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="4uVbBjbMs5XL2IGZlxIM-6" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;endArrow=none;startFill=0;" edge="1" parent="1" source="4uVbBjbMs5XL2IGZlxIM-2" target="uptyACYF9q1GfJ_68p10-5">
+        <mxCell id="4uVbBjbMs5XL2IGZlxIM-6" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;endArrow=none;startFill=0;" parent="1" source="4uVbBjbMs5XL2IGZlxIM-2" target="uptyACYF9q1GfJ_68p10-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4uVbBjbMs5XL2IGZlxIM-2" value="" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.firewall;" vertex="1" parent="1">
+        <mxCell id="4uVbBjbMs5XL2IGZlxIM-2" value="" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.firewall;" parent="1" vertex="1">
           <mxGeometry x="620" y="79.25" width="40.32" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="4uVbBjbMs5XL2IGZlxIM-7" value="fa0/2" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4uVbBjbMs5XL2IGZlxIM-7" value="fa0/2" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="546" y="46.5" width="50" height="40" as="geometry" />
         </mxCell>
       </root>
