@@ -28,7 +28,6 @@ app.config.globalProperties.$auth = authService
 
 // Initialisation de l'authentification au démarrage
 // Utilisez bien la méthode initialize() et non initializeAuth()
-authService.initialize()
 
 // Application du router
 app.use(router)

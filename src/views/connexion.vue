@@ -157,7 +157,7 @@ export default {
           // Pas besoin de stocker les données de session côté client, le serveur gère la session via le cookie
           
           // Rediriger vers le panneau du campeur avec son numéro d'emplacement
-          this.$router.push(`/panneau?role=campeur`);
+          this.$router.push(`/configuration`);
         })
         .catch(error => {
           console.error('Erreur de connexion campeur:', error);
@@ -185,7 +185,7 @@ export default {
           // Pas besoin de stocker les données de session côté client, le serveur gère la session via le cookie
           
           // Rediriger vers le panneau du gérant
-          this.$router.push('/panneau?role=gerant');
+          this.$router.push('/configuration');
         })
         .catch(error => {
           console.error('Erreur de connexion gérant:', error);

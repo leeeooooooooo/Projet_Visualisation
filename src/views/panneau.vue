@@ -37,78 +37,79 @@
 </template>
 
 <script setup>
-import { Gauge, FileText, Bell, Settings, LogOut } from 'lucide-vue-next'
-import { computed, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-import authService from '@/services/authService'
+import { ref, computed, onMounted } from 'vue';
+import authService from '@/services/authService';
 
-const router = useRouter()
+// État initial
+const isLoading = ref(true);
+const campingInfo = ref(null);
+const campingServices = ref([]);
+const userType = computed(() => authService.getUserType()); // Utilisation de la méthode getUserType
 
-// Récupération du type d'utilisateur depuis les cookies via le service
-const userType = computed(() => authService.getUserType() || 'campeur')
-
-// Affichage formaté du type d'utilisateur
-const userTypeDisplay = computed(() => {
-  return userType.value === 'campeur' ? 'Espace Campeur' : 'Espace Gérant'
-})
-
-// Tous les onglets possibles avec descriptions et classes de couleur
-const allCards = [
-  { 
-    title: 'Consommation', 
-    route: '/consommation', 
-    icon: Gauge, 
-    access: ['campeur', 'gerant'],
-    description: 'Suivez votre consommation d\'eau et d\'électricité en temps réel',
-    colorClass: 'card-blue'
-  },
-  { 
-    title: 'Rapport', 
-    route: '/rapport', 
-    icon: FileText, 
-    access: ['campeur', 'gerant'],
-    description: 'Consultez les statistiques et l\'historique de vos consommations',
-    colorClass: 'card-green'
-  },
-  { 
-    title: 'Notification', 
-    route: '/notification', 
-    icon: Bell, 
-    access: ['gerant'],
-    description: 'Gérez les alertes et messages pour les campeurs',
-    colorClass: 'card-orange'
-  },
-  { 
-    title: 'Configuration', 
-    route: '/configuration', 
-    icon: Settings, 
-    access: ['gerant'],
-    description: 'Paramétrez les comptes et les seuils de consommation',
-    colorClass: 'card-purple'
+// En fonction du type d'utilisateur, définissons les données à afficher
+const userData = computed(() => {
+  if (userType.value === 'campeur') {
+    return {
+      occupancy: 0,
+      todayBookings: 0,
+      pendingServices: 0
+    };
+  } else {
+    return {
+      occupancy: 75,
+      todayBookings: 5,
+      pendingServices: 3
+    };
   }
-]
+});
 
-// Filtrage des onglets selon le type d'utilisateur
-const filteredCards = computed(() => {
-  return allCards.filter(card => card.access.includes(userType.value))
-})
+// Récupération des données
+const occupancy = computed(() => userData.value.occupancy);
+const todayBookings = computed(() => userData.value.todayBookings);
+const pendingServices = computed(() => userData.value.pendingServices);
 
-// Animation d'entrée des cartes au chargement
-onMounted(() => {
-  const cards = document.querySelectorAll('.dashboard-card')
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.classList.add('show')
-    }, 100 * (index + 1))
-  })
-})
+// Récupérer les données nécessaires au chargement
+onMounted(async () => {
+  try {
+    const userResponse = await authService.getCurrentUser();
+    // Si la réponse est valide, mettre à jour les données
+    isLoading.value = false;
+  } catch (error) {
+    console.error('Erreur lors du chargement des données:', error.message);
+    // Rediriger vers la page de connexion en cas d'erreur
+    window.location.href = '/login';
+  }
+});
 
-// Fonction de déconnexion
-const logout = () => {
-  authService.logout()
-  router.push('/')
+// Fonctions pour les actions
+function requestService(serviceId) {
+  // Demander un service spécifique
+  console.log(`Service ${serviceId} demandé`);
+}
+
+function viewAllCampers() {
+  // Afficher tous les campeurs
+  console.log('Affichage de tous les campeurs');
+}
+
+function manageServices() {
+  // Gérer les services
+  console.log('Gestion des services');
+}
+
+function manageBookings() {
+  // Gérer les réservations
+  console.log('Gestion des réservations');
+}
+
+// Formater les dates
+function formatDate(dateString) {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return date.toLocaleDateString('fr-FR');
 }
 </script>
+
 
 <style scoped>
 /* Variables pour les couleurs */
