@@ -144,7 +144,7 @@ export default {
       this.isLoading = true;
 
       // Appel à l'API de connexion des campeurs
-      axios.post('http://172.20.0.39:5000/login/campeur', {
+      axios.post('https://172.20.0.39/login/campeur', {
         identifiant: this.campeur.numeroEmplacement,
         mot_de_passe: this.campeur.motDePasse
       }, {
@@ -157,7 +157,7 @@ export default {
           // Pas besoin de stocker les données de session côté client, le serveur gère la session via le cookie
           
           // Rediriger vers le panneau du campeur avec son numéro d'emplacement
-          this.$router.push(`/configuration`);
+          this.$router.push(`/notification`);
         })
         .catch(error => {
           console.error('Erreur de connexion campeur:', error);
@@ -172,7 +172,7 @@ export default {
       this.isLoading = true;
 
       // Appel à l'API de connexion des gérants
-      axios.post('http://172.20.0.39:5000/login/gerant', {
+      axios.post('https://172.20.0.39:443/login/gerant', {
         identifiant: this.gerant.identifiant,
         mot_de_passe: this.gerant.motDePasse
       }, {
@@ -185,7 +185,7 @@ export default {
           // Pas besoin de stocker les données de session côté client, le serveur gère la session via le cookie
           
           // Rediriger vers le panneau du gérant
-          this.$router.push('/configuration');
+          this.$router.push('/notification');
         })
         .catch(error => {
           console.error('Erreur de connexion gérant:', error);

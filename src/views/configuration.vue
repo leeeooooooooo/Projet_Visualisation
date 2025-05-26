@@ -197,7 +197,7 @@ export default {
           return;
         }
 
-        const url = 'http://172.20.0.39:5000/seuils';
+        const url = 'https://172.20.0.39:5000/seuils';
         const response = await axios.post(url, this.thresholdsForm, {
         headers: { 'Content-Type': 'application/json' },
         withCredentials: true

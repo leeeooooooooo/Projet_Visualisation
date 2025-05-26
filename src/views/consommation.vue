@@ -103,7 +103,7 @@ export default {
     async fetchLocations() {
       try {
         // Récupérer la liste des emplacements
-        const response = await axios.get('http://172.20.0.39:5000/emplacements');
+        const response = await axios.get('https://172.20.0.39:5000/emplacements');
         this.locations = response.data;
         console.log("Emplacements chargés:", this.locations); // Debug
         
@@ -133,8 +133,8 @@ export default {
         const locationNumber = this.selectedLocation.trim();
         // Utiliser les nouvelles APIs avec l'identifiant en paramètre
         const [waterRes, electricityRes] = await Promise.all([
-          axios.get(`http://172.20.0.39:5000/consommation/eau/${locationNumber}`),
-          axios.get(`http://172.20.0.39:5000/consommation/electricite/${locationNumber}`)
+          axios.get(`https://172.20.0.39:5000/consommation/eau/${locationNumber}`),
+          axios.get(`https://172.20.0.39:5000/consommation/electricite/${locationNumber}`)
         ]);
         
         console.log("Données eau reçues:", waterRes.data); // Debug
