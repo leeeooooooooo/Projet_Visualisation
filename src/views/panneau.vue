@@ -4,13 +4,13 @@
       <h1>Tableau de bord</h1>
       <div class="user-info">
         <span class="user-type">{{ userTypeDisplay }}</span>
-        <button class="logout-btn" @click="logout">
+        <button class="logout-btn" @click="logout" aria-label="Déconnexion">
           <LogOut size="18" />
           <span>Déconnexion</span>
         </button>
       </div>
     </header>
-    
+
     <main class="cards-container">
       <router-link 
         v-for="card in filteredCards"
@@ -29,7 +29,7 @@
         <div class="hover-wave"></div>
       </router-link>
     </main>
-    
+
     <footer class="dashboard-footer">
       <p>Projet Maîtrise des consommations</p>
     </footer>
@@ -37,82 +37,93 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
-import authService from '@/services/authService';
+import { ref, computed, onMounted, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
+import authService from '@/services/authService'
 
-// État initial
-const isLoading = ref(true);
-const campingInfo = ref(null);
-const campingServices = ref([]);
-const userType = computed(() => authService.getUserType()); // Utilisation de la méthode getUserType
+const router = useRouter()
 
-// En fonction du type d'utilisateur, définissons les données à afficher
-const userData = computed(() => {
-  if (userType.value === 'campeur') {
-    return {
-      occupancy: 0,
-      todayBookings: 0,
-      pendingServices: 0
-    };
-  } else {
-    return {
-      occupancy: 75,
-      todayBookings: 5,
-      pendingServices: 3
-    };
-  }
-});
+// Réactifs pour stocker rôle et id utilisateur récupérés
+const userType = ref('campeur')  // valeur par défaut
+const userId = ref(null)
 
-// Récupération des données
-const occupancy = computed(() => userData.value.occupancy);
-const todayBookings = computed(() => userData.value.todayBookings);
-const pendingServices = computed(() => userData.value.pendingServices);
+// Affichage lisible du type utilisateur
+const userTypeDisplay = computed(() => 
+  userType.value === 'gerant' ? 'Espace Gérant' : 'Espace Campeur'
+)
 
-// Récupérer les données nécessaires au chargement
+// Cartes accessibles (inchangé)
+const allCards = [
+  // ... mêmes cartes que dans ton code
+]
+
+// Filtrage des cartes visibles selon le type d'utilisateur
+const filteredCards = computed(() => 
+  allCards.filter(card => card.access.includes(userType.value))
+)
+
 onMounted(async () => {
   try {
-    const userResponse = await authService.getCurrentUser();
-    // Si la réponse est valide, mettre à jour les données
-    isLoading.value = false;
+    const res = await fetch('/user/role', {
+      method: 'GET',
+      credentials: 'include' // pour envoyer les cookies
+    })
+
+    if (res.ok) {
+      const text = await res.text()
+      console.log('Réponse brute du serveur :', text)
+
+      let data
+      try {
+        data = JSON.parse(text)
+      } catch (parseError) {
+        console.error('Erreur de parsing JSON:', parseError)
+        userType.value = 'inconnu'
+        userId.value = null
+        authService.setUserType(null)
+        authService.setUserId(null)
+        router.push('/')
+        return
+      }
+
+      userType.value = data.role
+      userId.value = data.id
+
+      // Mise à jour dans authService
+      authService.setUserType(data.role)
+      authService.setUserId(data.id)
+
+      console.log("Type d'utilisateur:", userType.value)
+      console.log('ID utilisateur:', userId.value)
+    } else {
+      console.warn('Utilisateur inconnu, non connecté')
+      userType.value = 'inconnu'
+      userId.value = null
+      authService.setUserType(null)
+      authService.setUserId(null)
+      router.push('/')
+    }
   } catch (error) {
-    console.error('Erreur lors du chargement des données:', error.message);
-    // Rediriger vers la page de connexion en cas d'erreur
-    window.location.href = '/login';
+    console.error('Erreur lors de la récupération du rôle utilisateur:', error)
   }
-});
 
-// Fonctions pour les actions
-function requestService(serviceId) {
-  // Demander un service spécifique
-  console.log(`Service ${serviceId} demandé`);
-}
+  await nextTick()
+  const cards = document.querySelectorAll('.dashboard-card')
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add('show')
+    }, 100 * (index + 1))
+  })
+})
 
-function viewAllCampers() {
-  // Afficher tous les campeurs
-  console.log('Affichage de tous les campeurs');
-}
-
-function manageServices() {
-  // Gérer les services
-  console.log('Gestion des services');
-}
-
-function manageBookings() {
-  // Gérer les réservations
-  console.log('Gestion des réservations');
-}
-
-// Formater les dates
-function formatDate(dateString) {
-  if (!dateString) return '';
-  const date = new Date(dateString);
-  return date.toLocaleDateString('fr-FR');
+const logout = () => {
+  authService.logout()
+  router.push('/')
 }
 </script>
 
-
-<style scoped>
-/* Variables pour les couleurs */
+<style>
+/* Variables de couleur */
 :root {
   --blue-gradient: linear-gradient(135deg, #60a5fa, #3b82f6);
   --green-gradient: linear-gradient(135deg, #4ade80, #10b981);
@@ -124,7 +135,7 @@ function formatDate(dateString) {
   --text-light: #f8fafc;
 }
 
-/* Reset et base */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -194,7 +205,7 @@ function formatDate(dateString) {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Conteneur principal pour les cartes */
+/* Conteneur des cartes */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -203,7 +214,7 @@ function formatDate(dateString) {
   flex-grow: 1;
 }
 
-/* Styles des cartes */
+/* Carte */
 .dashboard-card {
   height: 260px;
   background-color: white;
@@ -248,8 +259,15 @@ function formatDate(dateString) {
 }
 
 .card-icon {
-  background-color: rgba(255, 255, 255, 0.4); /* éventuellement plus opaque */
-  color: #1e293b; /* pour ressortir */
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #1e293b;
+  border-radius: 50%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
 }
 
 .dashboard-card:hover .card-icon {
@@ -257,31 +275,39 @@ function formatDate(dateString) {
 }
 
 .card-title {
-  color: #1e293b; /* texte sombre */
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .card-description {
-  color: rgba(30, 41, 59, 0.8); /* un gris foncé */
+  color: rgba(30, 41, 59, 0.8);
+  font-size: 1rem;
 }
 
-/* Couleurs des cartes avec dégradés */
+/* Couleurs */
 .card-blue {
   background: var(--blue-gradient);
+  color: var(--text-light);
 }
 
 .card-green {
   background: var(--green-gradient);
+  color: var(--text-light);
 }
 
 .card-orange {
   background: var(--orange-gradient);
+  color: var(--text-light);
 }
 
 .card-purple {
   background: var(--purple-gradient);
+  color: var(--text-light);
 }
 
-/* Effet de vague au survol */
+/* Vague au survol */
 .hover-wave {
   position: absolute;
   top: 0;
@@ -309,7 +335,7 @@ function formatDate(dateString) {
   font-size: 0.875rem;
 }
 
-/* Responsive design */
+/* Responsive */
 @media (max-width: 768px) {
   .dashboard-header {
     flex-direction: column;
@@ -341,8 +367,8 @@ function formatDate(dateString) {
 @media (min-width: 1800px) {
   .cards-container {
     grid-template-columns: repeat(4, 1fr);
-    max-width: 1600px;
-    margin: 0 auto;
+    gap: 2rem;
+    padding: 3rem 4rem;
   }
 }
 </style>

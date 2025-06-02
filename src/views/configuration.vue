@@ -158,8 +158,8 @@ export default {
     async submitForm() {
       try {
         const url = this.accountForm.userType === 'campeur'
-          ? 'http://172.20.0.39:5000/creation/campeur'
-          : 'http://172.20.0.39:5000/creation/gerant';
+          ? 'https://172.20.0.39:5000/creation/campeur'
+          : 'https://172.20.0.39:5000/creation/gerant';
           
         const formData = this.accountForm.userType === 'campeur'
           ? {

@@ -9,7 +9,7 @@ const app = createApp(App)
 
 
 // Configuration globale d'axios
-axios.defaults.baseURL = 'http://localhost:3005' // URL de base de votre API
+axios.defaults.baseURL = 'https://172.20.0.39:5000' // URL de base de votre API
 
 // Intercepteur pour gérer les erreurs 401 (non autorisé)
 axios.interceptors.response.use(

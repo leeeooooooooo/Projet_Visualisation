@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="login-card">
       <h1 class="title">Connexion</h1>
-      
+
       <!-- Sélection du type d'utilisateur -->
       <div class="user-type-selector">
         <button 
@@ -22,7 +22,7 @@
           Gérant
         </button>
       </div>
-      
+
       <!-- Formulaire pour Campeur -->
       <form v-if="userType === 'campeur'" @submit.prevent="handleLogin" class="login-form">
         <div class="form-group">
@@ -36,25 +36,31 @@
             :disabled="isLoading"
           />
         </div>
-        
+
         <div class="form-group">
           <label for="password-campeur">Mot de passe</label>
-          <input 
-            type="password" 
-            id="password-campeur" 
-            v-model="campeur.motDePasse" 
-            required
-            class="form-input"
-            :disabled="isLoading"
-          />
+          <div class="password-wrapper">
+            <input 
+              :type="showPasswordCampeur ? 'text' : 'password'" 
+              id="password-campeur" 
+              v-model="campeur.motDePasse" 
+              required
+              class="form-input"
+              :disabled="isLoading"
+            />
+            <button type="button" @click="showPasswordCampeur = !showPasswordCampeur" class="toggle-password">
+              <span v-if="showPasswordCampeur">🔓</span>
+              <span v-else>🔒</span>
+            </button>
+          </div>
         </div>
-        
+
         <button type="submit" class="submit-button" :disabled="isLoading">
           <span v-if="isLoading">Connexion en cours...</span>
           <span v-else>Se connecter</span>
         </button>
       </form>
-      
+
       <!-- Formulaire pour Gérant -->
       <form v-if="userType === 'gerant'" @submit.prevent="handleLogin" class="login-form">
         <div class="form-group">
@@ -68,25 +74,31 @@
             :disabled="isLoading"
           />
         </div>
-        
+
         <div class="form-group">
           <label for="password-gerant">Mot de passe</label>
-          <input 
-            type="password" 
-            id="password-gerant" 
-            v-model="gerant.motDePasse" 
-            required
-            class="form-input"
-            :disabled="isLoading"
-          />
+          <div class="password-wrapper">
+            <input 
+              :type="showPasswordGerant ? 'text' : 'password'" 
+              id="password-gerant" 
+              v-model="gerant.motDePasse" 
+              required
+              class="form-input"
+              :disabled="isLoading"
+            />
+            <button type="button" @click="showPasswordGerant = !showPasswordGerant" class="toggle-password">
+              <span v-if="showPasswordGerant">🔓</span>
+              <span v-else>🔒</span>
+            </button>
+          </div>
         </div>
-        
+
         <button type="submit" class="submit-button" :disabled="isLoading">
           <span v-if="isLoading">Connexion en cours...</span>
           <span v-else>Se connecter</span>
         </button>
       </form>
-      
+
       <!-- Message d'erreur -->
       <div v-if="errorMessage" class="error-message">
         {{ errorMessage }}
@@ -97,12 +109,13 @@
 
 <script>
 import axios from 'axios';
-import Cookies from 'js-cookie'
+import authService from '@/services/authService'; // AJOUT : Import de votre authService
+
 export default {
   name: 'LoginForm',
   data() {
     return {
-      userType: 'campeur', // Type d'utilisateur par défaut
+      userType: 'campeur',
       campeur: {
         numeroEmplacement: '',
         motDePasse: ''
@@ -111,53 +124,68 @@ export default {
         identifiant: '',
         motDePasse: ''
       },
+      showPasswordCampeur: false,
+      showPasswordGerant: false,
       errorMessage: '',
       isLoading: false
-    }
+    };
   },
+  
+  // AJOUT : Nettoyage des anciennes sessions au chargement
+  mounted() {
+    console.log('=== NETTOYAGE AU CHARGEMENT DE LA PAGE LOGIN ===');
+    authService.logout(); // Nettoie les anciennes sessions
+    authService.debugCookies();
+  },
+  
   methods: {
     handleLogin() {
-      this.errorMessage = ''; // Réinitialiser le message d'erreur
-      
+      this.errorMessage = '';
+
       if (this.userType === 'campeur') {
-        // Vérifier que les champs sont remplis
         if (!this.campeur.numeroEmplacement || !this.campeur.motDePasse) {
           this.errorMessage = 'Veuillez remplir tous les champs';
           return;
         }
-        
-        // Appeler l'API pour le campeur
         this.loginCampeur();
       } else {
-        // Vérifier que les champs sont remplis
         if (!this.gerant.identifiant || !this.gerant.motDePasse) {
           this.errorMessage = 'Veuillez remplir tous les champs';
           return;
         }
-        
-        // Appeler l'API pour le gérant
         this.loginGerant();
       }
     },
-    
+
     loginCampeur() {
       this.isLoading = true;
+      console.log('=== TENTATIVE DE CONNEXION CAMPEUR ===');
 
-      // Appel à l'API de connexion des campeurs
-      axios.post('https://172.20.0.39/login/campeur', {
+      // AJOUT : Nettoyage avant connexion
+      authService.logout();
+
+      axios.post('/login/campeur', {
         identifiant: this.campeur.numeroEmplacement,
         mot_de_passe: this.campeur.motDePasse
       }, {
-        withCredentials: true // Important pour que le cookie de session soit envoyé/reçu
+        withCredentials: true
       })
         .then(response => {
-          // Gestion de la session réussie
           console.log('Connexion campeur réussie:', response.data);
-
-          // Pas besoin de stocker les données de session côté client, le serveur gère la session via le cookie
           
-          // Rediriger vers le panneau du campeur avec son numéro d'emplacement
-          this.$router.push(`/notification`);
+          // AJOUT : Gestion côté frontend après succès
+          if (response.data && response.data.id_campeur) {
+            // Si le serveur renvoie l'ID, on l'utilise
+            authService.setSession('campeur', response.data.id_campeur);
+          } else {
+            // Sinon on attend un peu que le serveur ait défini le cookie
+            setTimeout(() => {
+              console.log('Vérification des cookies après connexion campeur:');
+              authService.debugCookies();
+            }, 100);
+          }
+          
+          this.$router.push('/panneau');
         })
         .catch(error => {
           console.error('Erreur de connexion campeur:', error);
@@ -170,22 +198,33 @@ export default {
 
     loginGerant() {
       this.isLoading = true;
+      console.log('=== TENTATIVE DE CONNEXION GÉRANT ===');
 
-      // Appel à l'API de connexion des gérants
-      axios.post('https://172.20.0.39:443/login/gerant', {
+      // AJOUT : Nettoyage avant connexion
+      authService.logout();
+
+      axios.post('/login/gerant', {
         identifiant: this.gerant.identifiant,
         mot_de_passe: this.gerant.motDePasse
       }, {
-        withCredentials: true // Important pour que le cookie de session soit envoyé/reçu
+        withCredentials: true
       })
         .then(response => {
-          // Gestion de la session réussie
           console.log('Connexion gérant réussie:', response.data);
-
-          // Pas besoin de stocker les données de session côté client, le serveur gère la session via le cookie
           
-          // Rediriger vers le panneau du gérant
-          this.$router.push('/notification');
+          // AJOUT : Gestion côté frontend après succès
+          if (response.data && response.data.id_gerant) {
+            // Si le serveur renvoie l'ID, on l'utilise
+            authService.setSession('gerant', response.data.id_gerant);
+          } else {
+            // Sinon on attend un peu que le serveur ait défini le cookie
+            setTimeout(() => {
+              console.log('Vérification des cookies après connexion gérant:');
+              authService.debugCookies();
+            }, 100);
+          }
+          
+          this.$router.push('/panneau');
         })
         .catch(error => {
           console.error('Erreur de connexion gérant:', error);
@@ -196,9 +235,8 @@ export default {
         });
     }
   }
-}
+};
 </script>
-
 
 <style scoped>
 .login-container {
@@ -267,6 +305,21 @@ label {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 1rem;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 0%;
+  right: 0.0rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 .submit-button {
