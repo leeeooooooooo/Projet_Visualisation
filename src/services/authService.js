@@ -1,3 +1,6 @@
+const userTypeKey = 'userType'
+const userIdKey = 'userId'
+
 export default {
   getUserType() {
     return localStorage.getItem(userTypeKey)

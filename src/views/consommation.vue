@@ -161,7 +161,7 @@ export default {
 
   // Adapter ici aux vrais noms de champs de ta réponse JSON
   const convertedData = rawData.map(item => ({
-    Date_heure: item.Date_heure,
+    Date_heure: item.Date_heure || item.Date_Heure,
     Quantite: item.Quantite
   }));
 
@@ -188,7 +188,7 @@ export default {
           key = date.toLocaleString('default', { month: 'short' });
         }
 
-        const quantite = item.Quantite || item.Quantite_Eau || item.Quantite_Electricite || 0;
+        const quantite = item.Quantite ?? 0;
         grouped[key] = (grouped[key] || 0) + quantite;
       });
 
@@ -272,7 +272,7 @@ export default {
 
     getTotalConsumption(values) {
       if (!values || values.length === 0) return 0;
-      return values.reduce((sum, val) => sum + val, 0).toFixed(2);
+      return Number(values.reduce((sum, val) => sum + val, 0)).toFixed(2);
     },
 
     getAverageConsumption(values) {
