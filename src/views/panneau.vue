@@ -37,9 +37,13 @@
 </template>
 
 <script setup>
+import axios from 'axios'
 import { ref, computed, onMounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import authService from '@/services/authService'
+
+// Import des icônes lucide-vue-next
+import { Gauge, FileText, Bell, Settings } from 'lucide-vue-next'
 
 const router = useRouter()
 
@@ -52,9 +56,40 @@ const userTypeDisplay = computed(() =>
   userType.value === 'gerant' ? 'Espace Gérant' : 'Espace Campeur'
 )
 
-// Cartes accessibles (inchangé)
+// Tous les onglets possibles avec descriptions, icônes et classes couleur
 const allCards = [
-  // ... mêmes cartes que dans ton code
+  { 
+    title: 'Consommation', 
+    route: '/consommation', 
+    icon: Gauge, 
+    access: ['campeur', 'gerant'],
+    description: 'Suivez votre consommation d\'eau et d\'électricité en temps réel',
+    colorClass: 'card-blue'
+  },
+  { 
+    title: 'Rapport', 
+    route: '/rapport', 
+    icon: FileText, 
+    access: ['campeur', 'gerant'],
+    description: 'Consultez les statistiques et l\'historique de vos consommations',
+    colorClass: 'card-green'
+  },
+  { 
+    title: 'Notification', 
+    route: '/notification', 
+    icon: Bell, 
+    access: ['gerant'],
+    description: 'Gérez les alertes et messages pour les campeurs',
+    colorClass: 'card-orange'
+  },
+  { 
+    title: 'Configuration', 
+    route: '/configuration', 
+    icon: Settings, 
+    access: ['gerant'],
+    description: 'Paramétrez les comptes et les seuils de consommation',
+    colorClass: 'card-purple'
+  }
 ]
 
 // Filtrage des cartes visibles selon le type d'utilisateur
@@ -64,28 +99,10 @@ const filteredCards = computed(() =>
 
 onMounted(async () => {
   try {
-    const res = await fetch('/user/role', {
-      method: 'GET',
-      credentials: 'include' // pour envoyer les cookies
-    })
+    const res = await axios.get('/user/role', { withCredentials: true })
+    const data = res.data
 
-    if (res.ok) {
-      const text = await res.text()
-      console.log('Réponse brute du serveur :', text)
-
-      let data
-      try {
-        data = JSON.parse(text)
-      } catch (parseError) {
-        console.error('Erreur de parsing JSON:', parseError)
-        userType.value = 'inconnu'
-        userId.value = null
-        authService.setUserType(null)
-        authService.setUserId(null)
-        router.push('/')
-        return
-      }
-
+    if (data && data.role) {
       userType.value = data.role
       userId.value = data.id
 
