@@ -1,0 +1,54 @@
+from API import db
+
+class Gerant(db.Model):
+    __tablename__ = 'Gerant'
+    Id_Gerant = db.Column(db.Integer, primary_key=True)
+    Identifiant = db.Column(db.String(50), unique=True, nullable=False)
+    Mot_de_passe = db.Column(db.String(255), nullable=False)
+    Email = db.Column(db.String(100))
+    Telephone = db.Column(db.String(20))
+
+class Campeur(db.Model):
+    __tablename__ = 'Campeur'
+    Id_Campeur = db.Column(db.Integer, primary_key=True)
+    Identifiant = db.Column(db.String(50), unique=True, nullable=False)
+    Mot_de_passe = db.Column(db.String(255), nullable=False)
+    Date_Debut = db.Column(db.Date)
+    Date_Fin = db.Column(db.Date)
+
+class Emplacement(db.Model):
+    __tablename__ = 'Emplacement'
+    Id_Emplacement = db.Column(db.Integer, primary_key=True)
+    Numero_Emplacement = db.Column(db.String(20), unique=True, nullable=False)
+    Id_Campeur = db.Column(db.Integer, db.ForeignKey('Campeur.Id_Campeur'), nullable=True)  # Nullable si vide
+    Id_Gerant = db.Column(db.Integer, db.ForeignKey('Gerant.Id_Gerant'), nullable=False)
+    gerant = db.relationship('Gerant', backref='emplacements')
+
+class ConsommationEau(db.Model):
+    __tablename__ = 'Consommation_eau'
+    Id_Consommation_eau = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    Date_Heure = db.Column(db.DateTime, nullable=False)
+    Quantite = db.Column(db.Float(precision=2), nullable=False)
+    Id_Emplacement = db.Column(db.Integer, db.ForeignKey('Emplacement.Id_Emplacement'), nullable=False)
+
+class ConsommationElectrique(db.Model):
+    __tablename__ = 'Consommation_electrique'
+    Id_Consommation_electrique = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    Date_heure = db.Column(db.DateTime, nullable=False)
+    Quantite = db.Column(db.Float(precision=2), nullable=False)
+    Id_Emplacement = db.Column(db.Integer, db.ForeignKey('Emplacement.Id_Emplacement'), nullable=False)
+
+class Seuil(db.Model):
+    __tablename__ = 'Seuil'
+    Id_Seuil = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    Id_Emplacement = db.Column(db.Integer, db.ForeignKey('Emplacement.Id_Emplacement'), nullable=False)
+    
+    Seuil_Electricite_Matin = db.Column(db.Numeric(10, 2))
+    Seuil_Electricite_Midi = db.Column(db.Numeric(10, 2))
+    Seuil_Electricite_Soir = db.Column(db.Numeric(10, 2))
+    Seuil_Electricite_Nuit = db.Column(db.Numeric(10, 2))
+
+    Seuil_Eau_Matin = db.Column(db.Numeric(10, 2))
+    Seuil_Eau_Midi = db.Column(db.Numeric(10, 2))
+    Seuil_Eau_Soir = db.Column(db.Numeric(10, 2))
+    Seuil_Eau_Nuit = db.Column(db.Numeric(10, 2))
