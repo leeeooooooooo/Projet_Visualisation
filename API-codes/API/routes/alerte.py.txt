@@ -1,0 +1,96 @@
+from flask import Blueprint
+bp = Blueprint('alerte', __name__, url_prefix='/alerte')
+
+# ====================== ROUTE D'ALERTE CONSOMMATION ============================
+@app.route('/alerte/consommation', methods=['POST'])
+def alerte_seuil():
+    try:
+        # Récupération des données JSON envoyées dans la requête HTTP
+        data = request.get_json()
+        logger.info("Début traitement alerte consommation, données reçues : %s", data)
+
+        # Définir la date de début de journée (minuit) pour filtrer les consommations du jour en cours
+        date_limite = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+        logger.info("Date limite pour filtrage consommations : %s", date_limite)
+
+        # Listes qui contiendront les consommations ayant dépassé les seuils
+        depassements_eau = []
+        depassements_elec = []
+
+        # ====================== TRAITEMENT CONSOMMATION D'EAU ======================
+        # Récupérer toutes les consommations d'eau à partir de minuit
+        consommations_eau = ConsommationEau.query.filter(ConsommationEau.Date_Heure >= date_limite).all()
+        logger.info("Consommations eau récupérées : %d", len(consommations_eau))
+
+        for c in consommations_eau:
+            # Récupération du seuil associé à l'emplacement
+            seuil = Seuil.query.filter_by(Id_Emplacement=c.Id_Emplacement).first()
+            if seuil:
+                # Identifier la tranche horaire (matin, midi, soir, nuit) selon l'heure de la consommation
+                heure = c.Date_Heure.hour
+                tranche = _tranche_horaire(heure)
+                seuil_eau = getattr(seuil, f"Seuil_Eau_{tranche}")
+
+                # Comparer la consommation avec le seuil et enregistrer si dépassement
+                if seuil_eau is not None and c.Quantite > seuil_eau:
+                    logger.info("Dépassement eau détecté : %s > %s à l'emplacement %s", c.Quantite, seuil_eau, c.Id_Emplacement)
+                    depassements_eau.append(c)
+
+        # ====================== TRAITEMENT CONSOMMATION ÉLECTRICITÉ ======================
+        # Récupérer toutes les consommations électriques à partir de minuit
+        consommations_elec = ConsommationElectrique.query.filter(ConsommationElectrique.Date_heure >= date_limite).all()
+        logger.info("Consommations électricité récupérées : %d", len(consommations_elec))
+
+        for c in consommations_elec:
+            seuil = Seuil.query.filter_by(Id_Emplacement=c.Id_Emplacement).first()
+            if seuil:
+                heure = c.Date_heure.hour
+                tranche = _tranche_horaire(heure)
+                seuil_elec = getattr(seuil, f"Seuil_Electricite_{tranche}")
+
+                if seuil_elec is not None and c.Quantite > seuil_elec:
+                    logger.info("Dépassement électricité détecté : %s > %s à l'emplacement %s", c.Quantite, seuil_elec, c.Id_Emplacement)
+                    depassements_elec.append(c)
+
+        # ====================== AUCUN DÉPASSEMENT TROUVÉ ======================
+        if not depassements_eau and not depassements_elec:
+            logger.info("Aucun dépassement détecté aujourd'hui.")
+            return jsonify({'message': 'Aucun dépassement détecté.'}), 200
+
+        # ====================== RÉCUPÉRATION DU GÉRANT ======================
+        # On récupère le gérant associé à l'un des emplacements concernés par les dépassements
+        gerant = None
+        if depassements_eau:
+            gerant = Emplacement.query.get(depassements_eau[0].Id_Emplacement).gerant
+        elif depassements_elec:
+            gerant = Emplacement.query.get(depassements_elec[0].Id_Emplacement).gerant
+
+        if not gerant:
+            logger.warning("Aucun gérant trouvé pour ces consommations dépassant les seuils.")
+            return jsonify({'message': 'Aucun gérant trouvé pour ces consommations.'}), 404
+
+        # ====================== COMPOSITION DU MESSAGE D’ALERTE ======================
+        message_alerte = "Alerte de consommation :\n"
+        if depassements_eau:
+            message_alerte += f"- {len(depassements_eau)} dépassement(s) d'eau\n"
+        if depassements_elec:
+            message_alerte += f"- {len(depassements_elec)} dépassement(s) électrique\n"
+
+        # ====================== ENVOI DE L’EMAIL D’ALERTE ======================
+        logger.info("Envoi de l'alerte par email au gérant : %s", gerant.Email)
+        msg = Message("Alerte consommation camping", sender=app.config['MAIL_USERNAME'], recipients=[gerant.Email])
+        msg.body = message_alerte
+        mail.send(msg)
+        logger.info("Email envoyé avec succès.")
+
+        # ====================== ENVOI DU SMS D’ALERTE ======================
+        logger.info("Envoi de l'alerte par SMS au numéro : %s", gerant.Telephone)
+        envoyer_sms(gerant.Telephone, message_alerte)
+        logger.info("SMS envoyé avec succès.")
+
+        return jsonify({'message': 'Alertes envoyées.'}), 200
+
+    except Exception as e:
+        # En cas d’erreur serveur, rollback et retour d’erreur
+        logger.exception("Erreur serveur lors du traitement des alertes de consommation")
+        return jsonify({'message': f'Erreur serveur : {str(e)}'}), 500

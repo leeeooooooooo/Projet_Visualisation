@@ -1,0 +1,54 @@
+from flask import Blueprint
+bp = Blueprint('gerant', __name__, url_prefix='/gerant')
+
+@bp.route('/creation/gerant', methods=['POST'])
+def creation_gerant():
+    try:
+        # Récupération des données JSON de la requête
+        data = request.get_json()
+        logger.info("Tentative de création d'un nouveau gérant avec les données : %s", data)
+
+        # Extraction des champs requis depuis le corps de la requête
+        identifiant = data.get('identifiant')
+        mot_de_passe = data.get('mot_de_passe')
+        email = data.get('email')
+        telephone = data.get('telephone')
+
+        # Vérification de la présence de tous les champs nécessaires
+        if not all([identifiant, mot_de_passe, email, telephone]):
+            logger.warning("Champs manquants lors de la création du gérant.")
+            return jsonify({'message': 'Tous les champs sont requis.'}), 400
+
+        # Vérifie que l'identifiant n'est pas déjà utilisé par un autre gérant
+        if Gerant.query.filter_by(Identifiant=identifiant).first():
+            logger.warning("Identifiant déjà utilisé : %s", identifiant)
+            return jsonify({'message': 'Identifiant déjà utilisé.'}), 409
+
+        # Hachage du mot de passe avec bcrypt pour la sécurité
+        hashed_pw = bcrypt.generate_password_hash(mot_de_passe).decode('utf-8')
+
+        # Création d'une nouvelle instance de Gérant avec les données fournies
+        new_gerant = Gerant(
+            Identifiant=identifiant,
+            Mot_de_passe=hashed_pw,
+            Email=email,
+            Telephone=telephone
+        )
+
+        # Ajout du nouveau gérant à la base de données
+        db.session.add(new_gerant)
+        db.session.commit()
+
+        logger.info("Gérant créé avec succès : Id_Gerant=%s, Identifiant=%s", new_gerant.Id_Gerant, new_gerant.Identifiant)
+
+        # Retour d'une réponse JSON avec les informations du nouveau gérant
+        return jsonify({
+            'message': 'Gérant créé avec succès',
+            'Id_Gerant': new_gerant.Id_Gerant,
+            'Identifiant': new_gerant.Identifiant
+        }), 201
+
+    except Exception as e:
+        # Gestion des erreurs avec rollback de la session si nécessaire
+        logger.exception("Erreur lors de la création du gérant.")
+        return jsonify({'message': f'Erreur serveur : {str(e)}'}), 500
