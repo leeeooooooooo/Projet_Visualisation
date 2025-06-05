@@ -1,0 +1,1164 @@
+2025-06-02 11:50:13,857 [WARNING]  * Debugger is active!
+2025-06-02 11:50:13,989 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 11:50:54,451 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://172.20.0.39:5000
+2025-06-02 11:50:54,451 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-02 11:50:54,452 [INFO]  * Restarting with stat
+2025-06-02 11:50:54,921 [WARNING]  * Debugger is active!
+2025-06-02 11:50:54,924 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 11:53:13,624 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 11:53:13,625 [INFO] 172.20.0.29 - - [02/Jun/2025 11:53:13] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 11:53:13,667 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 11:53:13,974 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 11:53:13,975 [INFO] 172.20.0.29 - - [02/Jun/2025 11:53:13] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 11:53:46,569 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-02 11:53:46,569 [INFO] 172.20.0.29 - - [02/Jun/2025 11:53:46] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-02 11:53:46,615 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '56', 'mot_de_passe': 'Admin123!'}
+2025-06-02 11:53:46,908 [INFO] Connexion réussie pour le campeur ID : 9
+2025-06-02 11:53:46,908 [INFO] Cookie sécurisé défini pour le campeur ID : 9
+2025-06-02 11:53:46,909 [INFO] 172.20.0.29 - - [02/Jun/2025 11:53:46] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-02 11:59:45,955 [INFO]  * Detected change in '/home/camping/venv/API.py', reloading
+2025-06-02 11:59:46,094 [INFO]  * Restarting with stat
+2025-06-02 11:59:46,563 [WARNING]  * Debugger is active!
+2025-06-02 11:59:46,566 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 11:59:54,327 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://172.20.0.39:5000
+2025-06-02 11:59:54,327 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-02 11:59:54,328 [INFO]  * Restarting with stat
+2025-06-02 11:59:54,801 [WARNING]  * Debugger is active!
+2025-06-02 11:59:54,804 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 12:00:13,181 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-02 12:00:13,182 [INFO] 172.20.0.29 - - [02/Jun/2025 12:00:13] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-02 12:00:13,233 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '56', 'mot_de_passe': 'Admin123!'}
+2025-06-02 12:00:13,540 [INFO] Connexion réussie pour le campeur ID : 9
+2025-06-02 12:00:13,541 [INFO] Cookie sécurisé défini pour le campeur ID : 9
+2025-06-02 12:00:13,542 [INFO] 172.20.0.29 - - [02/Jun/2025 12:00:13] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-02 12:00:36,183 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 12:00:36,184 [INFO] 172.20.0.29 - - [02/Jun/2025 12:00:36] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 12:00:36,206 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 12:00:36,498 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 12:00:36,498 [ERROR] Erreur serveur lors de la tentative de connexion du gérant.
+Traceback (most recent call last):
+  File "/home/camping/venv/API.py", line 200, in login_gerant
+    logger.info("Cookie sécurisé défini pour le campeur ID : %s", campeur.Id_Campeur)
+                                                                  ^^^^^^^
+NameError: name 'campeur' is not defined. Did you mean: 'Campeur'?
+2025-06-02 12:00:36,515 [INFO] 172.20.0.29 - - [02/Jun/2025 12:00:36] "[35m[1mPOST /login/gerant HTTP/1.1[0m" 500 -
+2025-06-02 12:01:37,386 [INFO]  * Detected change in '/home/camping/venv/API.py', reloading
+2025-06-02 12:01:37,527 [INFO]  * Restarting with stat
+2025-06-02 12:01:37,999 [WARNING]  * Debugger is active!
+2025-06-02 12:01:38,002 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 12:01:46,763 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://172.20.0.39:5000
+2025-06-02 12:01:46,763 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-02 12:01:46,764 [INFO]  * Restarting with stat
+2025-06-02 12:01:47,237 [WARNING]  * Debugger is active!
+2025-06-02 12:01:47,240 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 12:01:49,062 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 12:01:49,063 [INFO] 172.20.0.29 - - [02/Jun/2025 12:01:49] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 12:01:49,124 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 12:01:49,431 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 12:01:49,431 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 12:01:49,432 [INFO] 172.20.0.29 - - [02/Jun/2025 12:01:49] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 12:02:41,265 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-02 12:02:41,266 [INFO] 172.20.0.29 - - [02/Jun/2025 12:02:41] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-02 12:02:41,290 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '56', 'mot_de_passe': 'Admin123!'}
+2025-06-02 12:02:41,583 [INFO] Connexion réussie pour le campeur ID : 9
+2025-06-02 12:02:41,583 [INFO] Cookie sécurisé défini pour le campeur ID : 9
+2025-06-02 12:02:41,584 [INFO] 172.20.0.29 - - [02/Jun/2025 12:02:41] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-02 12:04:28,613 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 12:04:28,614 [INFO] 172.20.0.29 - - [02/Jun/2025 12:04:28] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 12:04:28,636 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 12:04:28,927 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 12:04:28,927 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 12:04:28,928 [INFO] 172.20.0.29 - - [02/Jun/2025 12:04:28] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 12:05:50,474 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-02 12:05:50,475 [INFO] 172.20.0.29 - - [02/Jun/2025 12:05:50] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-02 12:05:50,497 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '56', 'mot_de_passe': 'Admin123!'}
+2025-06-02 12:05:50,788 [INFO] Connexion réussie pour le campeur ID : 9
+2025-06-02 12:05:50,789 [INFO] Cookie sécurisé défini pour le campeur ID : 9
+2025-06-02 12:05:50,790 [INFO] 172.20.0.29 - - [02/Jun/2025 12:05:50] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-02 12:06:02,390 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 12:06:02,391 [INFO] 172.20.0.29 - - [02/Jun/2025 12:06:02] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 12:06:02,413 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 12:06:02,703 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 12:06:02,704 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 12:06:02,704 [INFO] 172.20.0.29 - - [02/Jun/2025 12:06:02] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 12:09:56,421 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 12:09:56,422 [INFO] 172.20.0.29 - - [02/Jun/2025 12:09:56] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 12:09:56,444 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 12:09:56,735 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 12:09:56,736 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 12:09:56,737 [INFO] 172.20.0.29 - - [02/Jun/2025 12:09:56] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:06:32,846 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://172.20.0.39:5000
+2025-06-02 14:06:32,847 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-02 14:06:32,848 [INFO]  * Restarting with stat
+2025-06-02 14:06:33,449 [WARNING]  * Debugger is active!
+2025-06-02 14:06:33,452 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 14:10:39,743 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 14:10:39,744 [INFO] 172.20.0.29 - - [02/Jun/2025 14:10:39] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:10:39,786 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 14:10:40,094 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 14:10:40,094 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 14:10:40,095 [INFO] 172.20.0.29 - - [02/Jun/2025 14:10:40] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:16:29,010 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 14:16:29,011 [INFO] 172.20.0.29 - - [02/Jun/2025 14:16:29] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:16:29,031 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Test', 'mot_de_passe': 'Admin123!'}
+2025-06-02 14:16:29,323 [INFO] Cookie sécurisé défini pour le campeur ID : 1
+2025-06-02 14:16:29,324 [INFO] 172.20.0.29 - - [02/Jun/2025 14:16:29] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:22:08,642 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 14:22:08,642 [INFO] 172.20.0.29 - - [02/Jun/2025 14:22:08] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:22:08,662 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 14:22:08,953 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 14:22:08,953 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 14:22:08,954 [INFO] 172.20.0.29 - - [02/Jun/2025 14:22:08] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:25:31,386 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 14:25:31,386 [INFO] 172.20.0.29 - - [02/Jun/2025 14:25:31] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:25:31,408 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 14:25:31,700 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 14:25:31,700 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 14:25:31,701 [INFO] 172.20.0.29 - - [02/Jun/2025 14:25:31] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:27:43,254 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 14:27:43,255 [INFO] 172.20.0.29 - - [02/Jun/2025 14:27:43] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:27:43,280 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 14:27:43,571 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 14:27:43,571 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 14:27:43,572 [INFO] 172.20.0.29 - - [02/Jun/2025 14:27:43] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:34:31,967 [INFO] 172.20.0.29 - - [02/Jun/2025 14:34:31] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-02 14:37:06,301 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-02 14:37:06,302 [INFO] 172.20.0.29 - - [02/Jun/2025 14:37:06] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-02 14:37:06,325 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '13', 'mot_de_passe': 'Admin123!'}
+2025-06-02 14:37:06,618 [INFO] Connexion réussie pour le campeur ID : 3
+2025-06-02 14:37:06,618 [INFO] Cookie sécurisé défini pour le campeur ID : 3
+2025-06-02 14:37:06,619 [INFO] 172.20.0.29 - - [02/Jun/2025 14:37:06] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-02 14:38:35,470 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-02 14:38:35,471 [INFO] 172.20.0.29 - - [02/Jun/2025 14:38:35] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-02 14:38:35,488 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '55', 'mot_de_passe': 'Admin123!'}
+2025-06-02 14:38:35,780 [INFO] Connexion réussie pour le campeur ID : 4
+2025-06-02 14:38:35,780 [INFO] Cookie sécurisé défini pour le campeur ID : 4
+2025-06-02 14:38:35,781 [INFO] 172.20.0.29 - - [02/Jun/2025 14:38:35] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-02 14:38:54,046 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-02 14:38:54,046 [INFO] 172.20.0.29 - - [02/Jun/2025 14:38:54] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-02 14:38:54,067 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '3', 'mot_de_passe': 'Admin123!'}
+2025-06-02 14:38:54,358 [INFO] Connexion réussie pour le campeur ID : 8
+2025-06-02 14:38:54,358 [INFO] Cookie sécurisé défini pour le campeur ID : 8
+2025-06-02 14:38:54,359 [INFO] 172.20.0.29 - - [02/Jun/2025 14:38:54] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-02 14:39:22,730 [INFO] 172.20.0.29 - - [02/Jun/2025 14:39:22] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-02 14:39:42,282 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 55
+2025-06-02 14:39:42,286 [WARNING] Aucun emplacement trouvé pour l’identifiant 55
+2025-06-02 14:39:42,287 [INFO] 172.20.0.29 - - [02/Jun/2025 14:39:42] "[33mGET /consommation/eau/55 HTTP/1.1[0m" 404 -
+2025-06-02 14:39:42,317 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 55
+2025-06-02 14:39:42,319 [WARNING] Aucun emplacement trouvé pour l’identifiant 55
+2025-06-02 14:39:42,320 [INFO] 172.20.0.29 - - [02/Jun/2025 14:39:42] "[33mGET /consommation/electricite/55 HTTP/1.1[0m" 404 -
+2025-06-02 14:39:47,959 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 56
+2025-06-02 14:39:47,961 [INFO] Emplacement trouvé : ID 56 pour identifiant 56
+2025-06-02 14:39:47,981 [INFO] Nombre de consommations trouvées : 6
+2025-06-02 14:39:47,983 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 56
+2025-06-02 14:39:47,985 [INFO] 172.20.0.29 - - [02/Jun/2025 14:39:47] "GET /consommation/eau/56 HTTP/1.1" 200 -
+2025-06-02 14:39:47,987 [INFO] Emplacement trouvé : ID 56 pour identifiant 56
+2025-06-02 14:39:47,997 [INFO] Nombre de consommations électriques trouvées : 360
+2025-06-02 14:39:48,003 [INFO] 172.20.0.29 - - [02/Jun/2025 14:39:48] "GET /consommation/electricite/56 HTTP/1.1" 200 -
+2025-06-02 14:42:36,553 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-02 14:42:36,554 [INFO] 172.20.0.29 - - [02/Jun/2025 14:42:36] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-02 14:42:36,575 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '56', 'mot_de_passe': 'Admin123!'}
+2025-06-02 14:42:36,866 [INFO] Connexion réussie pour le campeur ID : 9
+2025-06-02 14:42:36,867 [INFO] Cookie sécurisé défini pour le campeur ID : 9
+2025-06-02 14:42:36,868 [INFO] 172.20.0.29 - - [02/Jun/2025 14:42:36] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-02 14:51:40,426 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 14:51:40,427 [INFO] 172.20.0.29 - - [02/Jun/2025 14:51:40] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 14:51:40,447 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 14:51:40,738 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 14:51:40,738 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 14:51:40,739 [INFO] 172.20.0.29 - - [02/Jun/2025 14:51:40] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 15:00:53,262 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 15:00:53,263 [INFO] 172.20.0.29 - - [02/Jun/2025 15:00:53] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 15:00:53,286 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 15:00:53,572 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 15:00:53,573 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 15:00:53,574 [INFO] 172.20.0.29 - - [02/Jun/2025 15:00:53] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 15:07:52,119 [INFO] 172.20.0.29 - - [02/Jun/2025 15:07:52] "OPTIONS /creation/campeur HTTP/1.1" 200 -
+2025-06-02 15:07:52,146 [INFO] Requête reçue pour la création d’un campeur : {'mot_de_passe': 'Admin123!', 'date_debut': '2025-06-09', 'date_fin': '2025-06-16', 'numero_emplacement': 49}
+2025-06-02 15:07:52,484 [INFO] Campeur créé avec succès : Id=128, Emplacement=49
+2025-06-02 15:07:52,509 [INFO] Emplacement 49 lié au campeur ID : 128
+2025-06-02 15:07:52,512 [INFO] 172.20.0.29 - - [02/Jun/2025 15:07:52] "[35m[1mPOST /creation/campeur HTTP/1.1[0m" 201 -
+2025-06-02 15:08:35,664 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-02 15:08:35,665 [INFO] 172.20.0.29 - - [02/Jun/2025 15:08:35] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-02 15:08:35,682 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '49', 'mot_de_passe': 'Admin123!'}
+2025-06-02 15:08:35,972 [INFO] Connexion réussie pour le campeur ID : 128
+2025-06-02 15:08:35,973 [INFO] Cookie sécurisé défini pour le campeur ID : 128
+2025-06-02 15:08:35,974 [INFO] 172.20.0.29 - - [02/Jun/2025 15:08:35] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-02 15:12:41,813 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 15:12:41,814 [INFO] 172.20.0.29 - - [02/Jun/2025 15:12:41] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 15:12:41,856 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 15:12:42,146 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 15:12:42,147 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 15:12:42,147 [INFO] 172.20.0.29 - - [02/Jun/2025 15:12:42] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 15:21:31,098 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 15:21:31,099 [INFO] 172.20.0.29 - - [02/Jun/2025 15:21:31] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 15:21:31,140 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 15:21:31,431 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 15:21:31,432 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 15:21:31,433 [INFO] 172.20.0.29 - - [02/Jun/2025 15:21:31] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 15:25:50,916 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 15:25:50,917 [INFO] 172.20.0.29 - - [02/Jun/2025 15:25:50] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 15:25:50,938 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 15:25:51,229 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 15:25:51,230 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 15:25:51,230 [INFO] 172.20.0.29 - - [02/Jun/2025 15:25:51] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 15:30:58,843 [INFO]  * Detected change in '/home/camping/venv/API.py', reloading
+2025-06-02 15:30:59,023 [INFO]  * Restarting with stat
+2025-06-02 15:30:59,759 [WARNING]  * Debugger is active!
+2025-06-02 15:30:59,764 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 15:31:41,013 [INFO] 172.20.0.29 - - [02/Jun/2025 15:31:41] "OPTIONS /creation/campeur HTTP/1.1" 200 -
+2025-06-02 15:31:41,072 [INFO] Requête reçue pour la mise à jour d’un campeur : {'mot_de_passe': 'Admin123!', 'date_debut': '2025-06-09', 'date_fin': '2025-06-16', 'numero_emplacement': 69}
+2025-06-02 15:31:41,092 [WARNING] Campeur non trouvé avec identifiant : idcampeur69
+2025-06-02 15:31:41,094 [INFO] 172.20.0.29 - - [02/Jun/2025 15:31:41] "[33mPOST /creation/campeur HTTP/1.1[0m" 404 -
+2025-06-02 15:35:25,297 [INFO]  * Detected change in '/home/camping/venv/API.py', reloading
+2025-06-02 15:35:25,473 [INFO]  * Restarting with stat
+2025-06-02 15:35:26,222 [WARNING]  * Debugger is active!
+2025-06-02 15:35:26,229 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 15:35:54,307 [INFO] 172.20.0.29 - - [02/Jun/2025 15:35:54] "OPTIONS /creation/campeur HTTP/1.1" 200 -
+2025-06-02 15:35:54,350 [INFO] Requête reçue pour la mise à jour d’un campeur : {'mot_de_passe': 'Admin123!', 'date_debut': '2025-06-09', 'date_fin': '2025-06-16', 'numero_emplacement': 69}
+2025-06-02 15:35:54,371 [INFO] Campeur trouvé : Id_Campeur=69
+2025-06-02 15:35:54,658 [INFO] Champs du campeur mis à jour : Date_Debut=2025-06-09, Date_Fin=2025-06-16
+2025-06-02 15:35:54,682 [INFO] Emplacement 69 lié au campeur 69
+2025-06-02 15:35:54,705 [INFO] Mise à jour en base réussie pour campeur 69 et emplacement 69
+2025-06-02 15:35:54,707 [INFO] 172.20.0.29 - - [02/Jun/2025 15:35:54] "POST /creation/campeur HTTP/1.1" 200 -
+2025-06-02 15:36:50,726 [INFO]  * Detected change in '/home/camping/venv/API.py', reloading
+2025-06-02 15:36:50,867 [INFO]  * Restarting with stat
+2025-06-02 15:36:51,448 [WARNING]  * Debugger is active!
+2025-06-02 15:36:51,451 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 15:37:36,518 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 15:37:36,519 [INFO] 172.20.0.29 - - [02/Jun/2025 15:37:36] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 15:37:36,562 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 15:37:36,868 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 15:37:36,869 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 15:37:36,870 [INFO] 172.20.0.29 - - [02/Jun/2025 15:37:36] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 15:50:39,129 [INFO]  * Detected change in '/home/camping/venv/API.py', reloading
+2025-06-02 15:50:39,269 [INFO]  * Restarting with stat
+2025-06-02 15:50:39,742 [WARNING]  * Debugger is active!
+2025-06-02 15:50:39,745 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 16:03:56,225 [INFO]  * Detected change in '/home/camping/venv/API.py', reloading
+2025-06-02 16:03:56,357 [INFO]  * Restarting with stat
+2025-06-02 16:03:56,830 [WARNING]  * Debugger is active!
+2025-06-02 16:03:56,833 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 16:04:02,873 [INFO]  * Detected change in '/home/camping/venv/API.py', reloading
+2025-06-02 16:04:03,012 [INFO]  * Restarting with stat
+2025-06-02 16:04:03,493 [WARNING]  * Debugger is active!
+2025-06-02 16:04:03,496 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 16:04:08,528 [INFO]  * Detected change in '/home/camping/venv/API.py', reloading
+2025-06-02 16:04:08,663 [INFO]  * Restarting with stat
+2025-06-02 16:04:09,137 [WARNING]  * Debugger is active!
+2025-06-02 16:04:09,139 [INFO]  * Debugger PIN: 596-263-832
+2025-06-02 16:10:19,133 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 16:10:19,134 [INFO] 172.20.0.29 - - [02/Jun/2025 16:10:19] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 16:10:19,176 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 16:10:19,481 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 16:10:19,481 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 16:10:19,482 [INFO] 172.20.0.29 - - [02/Jun/2025 16:10:19] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 16:10:44,571 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-02 16:10:44,572 [INFO] 172.20.0.29 - - [02/Jun/2025 16:10:44] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-02 16:10:44,594 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '49', 'mot_de_passe': 'Admin123!'}
+2025-06-02 16:10:44,598 [ERROR] Erreur lors de la tentative de connexion campeur.
+Traceback (most recent call last):
+  File "/home/camping/venv/API.py", line 295, in login_campeur
+    if not bcrypt.check_password_hash(campeur.Mot_de_passe, mot_de_passe):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/camping/venv/lib/python3.12/site-packages/flask_bcrypt.py", line 225, in check_password_hash
+    return hmac.compare_digest(bcrypt.hashpw(password, pw_hash), pw_hash)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument 'salt': 'NoneType' object cannot be converted to 'PyBytes'
+2025-06-02 16:10:44,600 [INFO] 172.20.0.29 - - [02/Jun/2025 16:10:44] "[35m[1mPOST /login/campeur HTTP/1.1[0m" 500 -
+2025-06-02 16:11:21,905 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 16:11:21,906 [INFO] 172.20.0.29 - - [02/Jun/2025 16:11:21] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 16:11:21,959 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 16:11:22,249 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 16:11:22,250 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 16:11:22,251 [INFO] 172.20.0.29 - - [02/Jun/2025 16:11:22] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 16:13:29,120 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-02 16:13:29,121 [INFO] 172.20.0.29 - - [02/Jun/2025 16:13:29] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-02 16:13:29,144 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-02 16:13:29,435 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-02 16:13:29,435 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-02 16:13:29,436 [INFO] 172.20.0.29 - - [02/Jun/2025 16:13:29] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-02 16:17:45,313 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://172.20.0.39:5000
+2025-06-02 16:17:45,314 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-02 16:17:45,314 [INFO]  * Restarting with stat
+2025-06-02 16:17:45,789 [WARNING]  * Debugger is active!
+2025-06-02 16:17:45,793 [INFO]  * Debugger PIN: 136-979-658
+2025-06-03 09:42:25,441 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://172.20.0.39:5000
+2025-06-03 09:42:25,441 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-03 09:42:25,442 [INFO]  * Restarting with stat
+2025-06-03 09:42:25,921 [WARNING]  * Debugger is active!
+2025-06-03 09:42:25,924 [INFO]  * Debugger PIN: 110-190-638
+2025-06-03 09:42:29,015 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-03 09:42:29,017 [INFO] 172.20.0.29 - - [03/Jun/2025 09:42:29] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-03 09:42:29,082 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 09:42:29,385 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 09:42:29,385 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-03 09:42:29,387 [INFO] 172.20.0.29 - - [03/Jun/2025 09:42:29] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 09:42:57,011 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-03 09:42:57,012 [INFO] 172.20.0.29 - - [03/Jun/2025 09:42:57] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-03 09:42:57,042 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 09:42:57,334 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 09:42:57,334 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-03 09:42:57,335 [INFO] 172.20.0.29 - - [03/Jun/2025 09:42:57] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 09:49:56,947 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-03 09:49:56,948 [INFO] 172.20.0.29 - - [03/Jun/2025 09:49:56] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-03 09:49:56,970 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 09:49:57,261 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 09:49:57,261 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-03 09:49:57,262 [INFO] 172.20.0.29 - - [03/Jun/2025 09:49:57] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 09:49:57,333 [INFO] 172.20.0.29 - - [03/Jun/2025 09:49:57] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 09:57:40,904 [INFO] 172.20.0.29 - - [03/Jun/2025 09:57:40] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 09:58:07,609 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 09:58:07,609 [INFO] 172.20.0.29 - - [03/Jun/2025 09:58:07] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 09:58:07,646 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '49', 'mot_de_passe': 'Admin123!'}
+2025-06-03 09:58:07,650 [ERROR] Erreur lors de la tentative de connexion campeur.
+Traceback (most recent call last):
+  File "/home/camping/venv/API.py", line 295, in login_campeur
+    if not bcrypt.check_password_hash(campeur.Mot_de_passe, mot_de_passe):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/camping/venv/lib/python3.12/site-packages/flask_bcrypt.py", line 225, in check_password_hash
+    return hmac.compare_digest(bcrypt.hashpw(password, pw_hash), pw_hash)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument 'salt': 'NoneType' object cannot be converted to 'PyBytes'
+2025-06-03 09:58:07,653 [INFO] 172.20.0.29 - - [03/Jun/2025 09:58:07] "[35m[1mPOST /login/campeur HTTP/1.1[0m" 500 -
+2025-06-03 09:59:27,519 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 09:59:27,520 [INFO] 172.20.0.29 - - [03/Jun/2025 09:59:27] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 09:59:27,564 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 09:59:27,855 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 09:59:27,856 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 09:59:27,857 [INFO] 172.20.0.29 - - [03/Jun/2025 09:59:27] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 09:59:27,974 [INFO] 172.20.0.29 - - [03/Jun/2025 09:59:27] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 09:59:34,006 [INFO] 172.20.0.29 - - [03/Jun/2025 09:59:34] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 09:59:37,755 [INFO] 172.20.0.29 - - [03/Jun/2025 09:59:37] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 10:01:46,345 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 10:01:46,345 [INFO] 172.20.0.30 - - [03/Jun/2025 10:01:46] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 10:01:46,462 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '74', 'mot_de_passe': 'aezsf'}
+2025-06-03 10:01:46,465 [ERROR] Erreur lors de la tentative de connexion campeur.
+Traceback (most recent call last):
+  File "/home/camping/venv/API.py", line 295, in login_campeur
+    if not bcrypt.check_password_hash(campeur.Mot_de_passe, mot_de_passe):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/camping/venv/lib/python3.12/site-packages/flask_bcrypt.py", line 225, in check_password_hash
+    return hmac.compare_digest(bcrypt.hashpw(password, pw_hash), pw_hash)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument 'salt': 'NoneType' object cannot be converted to 'PyBytes'
+2025-06-03 10:01:46,467 [INFO] 172.20.0.30 - - [03/Jun/2025 10:01:46] "[35m[1mPOST /login/campeur HTTP/1.1[0m" 500 -
+2025-06-03 10:01:46,836 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-03 10:01:46,837 [INFO] 172.20.0.29 - - [03/Jun/2025 10:01:46] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-03 10:01:46,886 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 10:01:47,178 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 10:01:47,179 [INFO] Cookie sécurisé défini pour le campeur ID : 2
+2025-06-03 10:01:47,180 [INFO] 172.20.0.29 - - [03/Jun/2025 10:01:47] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 10:01:47,291 [INFO] 172.20.0.29 - - [03/Jun/2025 10:01:47] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 10:02:04,179 [INFO] 172.20.0.29 - - [03/Jun/2025 10:02:04] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 10:03:11,232 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-03 10:03:11,232 [INFO] 172.20.0.30 - - [03/Jun/2025 10:03:11] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-03 10:03:11,273 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'admin', 'mot_de_passe': 'adsfq471'}
+2025-06-03 10:03:11,568 [ERROR] Erreur serveur lors de la tentative de connexion du gérant.
+Traceback (most recent call last):
+  File "/home/camping/venv/API.py", line 191, in login_gerant
+    resp.set_cookie(
+    ^^^^
+UnboundLocalError: cannot access local variable 'resp' where it is not associated with a value
+2025-06-03 10:03:11,569 [INFO] 172.20.0.30 - - [03/Jun/2025 10:03:11] "[35m[1mPOST /login/gerant HTTP/1.1[0m" 500 -
+2025-06-03 10:04:00,791 [INFO] 172.20.0.29 - - [03/Jun/2025 10:04:00] "OPTIONS /alerte/consommation HTTP/1.1" 200 -
+2025-06-03 10:04:00,826 [INFO] Début traitement alerte consommation, données reçues : {}
+2025-06-03 10:04:00,826 [INFO] Date limite pour filtrage consommations : 2025-06-03 00:00:00
+2025-06-03 10:04:00,830 [INFO] Consommations eau récupérées : 0
+2025-06-03 10:04:00,837 [INFO] Consommations électricité récupérées : 106
+2025-06-03 10:04:01,014 [INFO] Aucun dépassement détecté aujourd'hui.
+2025-06-03 10:04:01,015 [INFO] 172.20.0.29 - - [03/Jun/2025 10:04:01] "POST /alerte/consommation HTTP/1.1" 200 -
+2025-06-03 10:04:02,557 [INFO] 172.20.0.29 - - [03/Jun/2025 10:04:02] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 10:09:50,311 [INFO]  * Detected change in '/home/camping/venv/API.py', reloading
+2025-06-03 10:09:50,507 [INFO]  * Restarting with stat
+2025-06-03 10:09:51,154 [WARNING]  * Debugger is active!
+2025-06-03 10:09:51,157 [INFO]  * Debugger PIN: 110-190-638
+2025-06-03 10:10:01,568 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-03 10:10:01,569 [INFO] 172.20.0.30 - - [03/Jun/2025 10:10:01] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-03 10:10:01,618 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'admin', 'mot_de_passe': 'adsfq471'}
+2025-06-03 10:10:01,937 [WARNING] Échec de connexion pour l'identifiant : admin
+2025-06-03 10:10:01,939 [INFO] 172.20.0.30 - - [03/Jun/2025 10:10:01] "[31m[1mPOST /login/gerant HTTP/1.1[0m" 401 -
+2025-06-03 10:10:05,979 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 10:10:05,980 [INFO] 172.20.0.30 - - [03/Jun/2025 10:10:05] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 10:10:06,004 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '74', 'mot_de_passe': 'aezsf'}
+2025-06-03 10:10:06,008 [WARNING] Mot de passe incorrect ou non défini pour l’identifiant : 74
+2025-06-03 10:10:06,009 [INFO] 172.20.0.30 - - [03/Jun/2025 10:10:06] "[31m[1mPOST /login/campeur HTTP/1.1[0m" 401 -
+2025-06-03 10:10:07,633 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '74', 'mot_de_passe': 'aezsf'}
+2025-06-03 10:10:07,635 [WARNING] Mot de passe incorrect ou non défini pour l’identifiant : 74
+2025-06-03 10:10:07,636 [INFO] 172.20.0.30 - - [03/Jun/2025 10:10:07] "[31m[1mPOST /login/campeur HTTP/1.1[0m" 401 -
+2025-06-03 10:10:07,769 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '74', 'mot_de_passe': 'aezsf'}
+2025-06-03 10:10:07,771 [WARNING] Mot de passe incorrect ou non défini pour l’identifiant : 74
+2025-06-03 10:10:07,772 [INFO] 172.20.0.30 - - [03/Jun/2025 10:10:07] "[31m[1mPOST /login/campeur HTTP/1.1[0m" 401 -
+2025-06-03 10:10:07,924 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '74', 'mot_de_passe': 'aezsf'}
+2025-06-03 10:10:07,926 [WARNING] Mot de passe incorrect ou non défini pour l’identifiant : 74
+2025-06-03 10:10:07,927 [INFO] 172.20.0.30 - - [03/Jun/2025 10:10:07] "[31m[1mPOST /login/campeur HTTP/1.1[0m" 401 -
+2025-06-03 10:10:08,052 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '74', 'mot_de_passe': 'aezsf'}
+2025-06-03 10:10:08,054 [WARNING] Mot de passe incorrect ou non défini pour l’identifiant : 74
+2025-06-03 10:10:08,055 [INFO] 172.20.0.30 - - [03/Jun/2025 10:10:08] "[31m[1mPOST /login/campeur HTTP/1.1[0m" 401 -
+2025-06-03 10:10:08,303 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '74', 'mot_de_passe': 'aezsf'}
+2025-06-03 10:10:08,305 [WARNING] Mot de passe incorrect ou non défini pour l’identifiant : 74
+2025-06-03 10:10:08,306 [INFO] 172.20.0.30 - - [03/Jun/2025 10:10:08] "[31m[1mPOST /login/campeur HTTP/1.1[0m" 401 -
+2025-06-03 10:14:58,962 [INFO] 172.20.0.29 - - [03/Jun/2025 10:14:58] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 10:15:09,548 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 10:15:09,549 [INFO] 172.20.0.29 - - [03/Jun/2025 10:15:09] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 10:15:09,590 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '36', 'mot_de_passe': 'Admin123!'}
+2025-06-03 10:15:09,592 [WARNING] Mot de passe incorrect ou non défini pour l’identifiant : 36
+2025-06-03 10:15:09,593 [INFO] 172.20.0.29 - - [03/Jun/2025 10:15:09] "[31m[1mPOST /login/campeur HTTP/1.1[0m" 401 -
+2025-06-03 10:15:18,306 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-03 10:15:18,307 [INFO] 172.20.0.29 - - [03/Jun/2025 10:15:18] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-03 10:15:18,363 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'azdazdad', 'mot_de_passe': 'azdaadzdad'}
+2025-06-03 10:15:18,365 [WARNING] Échec de connexion pour l'identifiant : azdazdad
+2025-06-03 10:15:18,366 [INFO] 172.20.0.29 - - [03/Jun/2025 10:15:18] "[31m[1mPOST /login/gerant HTTP/1.1[0m" 401 -
+2025-06-03 10:24:28,843 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 10:24:28,844 [INFO] 172.20.0.29 - - [03/Jun/2025 10:24:28] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 10:24:28,876 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 10:24:29,168 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 10:24:29,168 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 10:24:29,169 [INFO] 172.20.0.29 - - [03/Jun/2025 10:24:29] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 10:24:29,255 [INFO] 172.20.0.29 - - [03/Jun/2025 10:24:29] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 10:24:33,597 [INFO] 172.20.0.29 - - [03/Jun/2025 10:24:33] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 10:24:39,134 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:24:39,138 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:24:39,141 [INFO] Nombre de consommations trouvées : 0
+2025-06-03 10:24:39,143 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:24:39,144 [INFO] 172.20.0.29 - - [03/Jun/2025 10:24:39] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:24:39,147 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:24:39,150 [INFO] Nombre de consommations électriques trouvées : 0
+2025-06-03 10:24:39,151 [INFO] 172.20.0.29 - - [03/Jun/2025 10:24:39] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:24:54,679 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 56
+2025-06-03 10:24:54,681 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:24:54,682 [INFO] 172.20.0.29 - - [03/Jun/2025 10:24:54] "[33mGET /consommation/eau/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:24:54,684 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 56
+2025-06-03 10:24:54,686 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:24:54,687 [INFO] 172.20.0.29 - - [03/Jun/2025 10:24:54] "[33mGET /consommation/electricite/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:24:55,859 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 56
+2025-06-03 10:24:55,861 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:24:55,862 [INFO] 172.20.0.29 - - [03/Jun/2025 10:24:55] "[33mGET /consommation/eau/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:24:55,865 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 56
+2025-06-03 10:24:55,867 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:24:55,868 [INFO] 172.20.0.29 - - [03/Jun/2025 10:24:55] "[33mGET /consommation/electricite/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:25:17,823 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 56
+2025-06-03 10:25:17,825 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:25:17,827 [INFO] 172.20.0.29 - - [03/Jun/2025 10:25:17] "[33mGET /consommation/eau/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:25:17,831 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 56
+2025-06-03 10:25:17,833 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:25:17,834 [INFO] 172.20.0.29 - - [03/Jun/2025 10:25:17] "[33mGET /consommation/electricite/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:25:34,828 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 56
+2025-06-03 10:25:34,830 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:25:34,831 [INFO] 172.20.0.29 - - [03/Jun/2025 10:25:34] "[33mGET /consommation/eau/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:25:34,833 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 56
+2025-06-03 10:25:34,835 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:25:34,836 [INFO] 172.20.0.29 - - [03/Jun/2025 10:25:34] "[33mGET /consommation/electricite/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:25:57,027 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 56
+2025-06-03 10:25:57,029 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:25:57,030 [INFO] 172.20.0.29 - - [03/Jun/2025 10:25:57] "[33mGET /consommation/eau/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:25:57,033 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 56
+2025-06-03 10:25:57,035 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:25:57,036 [INFO] 172.20.0.29 - - [03/Jun/2025 10:25:57] "[33mGET /consommation/electricite/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:25:59,468 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 56
+2025-06-03 10:25:59,470 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:25:59,471 [INFO] 172.20.0.29 - - [03/Jun/2025 10:25:59] "[33mGET /consommation/eau/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:25:59,473 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 56
+2025-06-03 10:25:59,475 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:25:59,476 [INFO] 172.20.0.29 - - [03/Jun/2025 10:25:59] "[33mGET /consommation/electricite/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:27:10,836 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 56
+2025-06-03 10:27:10,838 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-03 10:27:10,839 [INFO] 172.20.0.29 - - [03/Jun/2025 10:27:10] "[33mGET /consommation/eau/56 HTTP/1.1[0m" 404 -
+2025-06-03 10:27:11,008 [INFO] 172.20.0.29 - - [03/Jun/2025 10:27:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-03 10:27:50,122 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:27:50,124 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:27:50,126 [INFO] Nombre de consommations trouvées : 0
+2025-06-03 10:27:50,127 [INFO] 172.20.0.29 - - [03/Jun/2025 10:27:50] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:27:50,190 [INFO] 172.20.0.29 - - [03/Jun/2025 10:27:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-03 10:31:35,529 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:31:35,531 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:31:35,533 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:31:35,534 [INFO] 172.20.0.29 - - [03/Jun/2025 10:31:35] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:31:35,591 [INFO] 172.20.0.29 - - [03/Jun/2025 10:31:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-03 10:31:39,127 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:31:39,129 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:31:39,131 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:31:39,132 [INFO] 172.20.0.29 - - [03/Jun/2025 10:31:39] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:31:39,133 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:31:39,135 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:31:39,137 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:31:39,139 [INFO] 172.20.0.29 - - [03/Jun/2025 10:31:39] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:32:34,778 [INFO] 172.20.0.29 - - [03/Jun/2025 10:32:34] "[31m[1mGET /user/role HTTP/1.1[0m" 401 -
+2025-06-03 10:33:33,071 [INFO] 172.20.0.29 - - [03/Jun/2025 10:33:33] "OPTIONS /creation/campeur HTTP/1.1" 200 -
+2025-06-03 10:33:33,102 [INFO] Requête reçue pour la mise à jour d’un campeur : {'mot_de_passe': 'Admin123!', 'date_debut': '2025-04-12', 'date_fin': '2025-04-20', 'numero_emplacement': 10}
+2025-06-03 10:33:33,105 [INFO] Campeur trouvé : Id_Campeur=10
+2025-06-03 10:33:33,398 [INFO] Champs du campeur mis à jour : Date_Debut=2025-04-12, Date_Fin=2025-04-20
+2025-06-03 10:33:33,402 [INFO] Emplacement 10 lié au campeur 10
+2025-06-03 10:33:33,420 [INFO] Mise à jour en base réussie pour campeur 10 et emplacement 10
+2025-06-03 10:33:33,423 [INFO] 172.20.0.29 - - [03/Jun/2025 10:33:33] "POST /creation/campeur HTTP/1.1" 200 -
+2025-06-03 10:34:28,900 [INFO] 172.20.0.29 - - [03/Jun/2025 10:34:28] "[31m[1mGET /user/role HTTP/1.1[0m" 401 -
+2025-06-03 10:34:45,328 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 10:34:45,329 [INFO] 172.20.0.29 - - [03/Jun/2025 10:34:45] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 10:34:45,354 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '10', 'mot_de_passe': 'Admin123!'}
+2025-06-03 10:34:45,645 [INFO] Connexion réussie pour le campeur ID : 10
+2025-06-03 10:34:45,646 [INFO] Cookie sécurisé défini pour le campeur ID : 10
+2025-06-03 10:34:45,647 [INFO] 172.20.0.29 - - [03/Jun/2025 10:34:45] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 10:34:45,716 [INFO] 172.20.0.29 - - [03/Jun/2025 10:34:45] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 10:36:17,661 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 10:36:17,661 [INFO] 172.20.0.29 - - [03/Jun/2025 10:36:17] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 10:36:17,703 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 10:36:17,995 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 10:36:17,996 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 10:36:17,997 [INFO] 172.20.0.29 - - [03/Jun/2025 10:36:17] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 10:36:18,117 [INFO] 172.20.0.29 - - [03/Jun/2025 10:36:18] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 10:46:18,253 [INFO] 172.20.0.29 - - [03/Jun/2025 10:46:18] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 10:46:37,324 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 10:46:37,325 [INFO] 172.20.0.29 - - [03/Jun/2025 10:46:37] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 10:46:37,353 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '10', 'mot_de_passe': 'Admin123!'}
+2025-06-03 10:46:37,645 [INFO] Connexion réussie pour le campeur ID : 10
+2025-06-03 10:46:37,645 [INFO] Cookie sécurisé défini pour le campeur ID : 10
+2025-06-03 10:46:37,646 [INFO] 172.20.0.29 - - [03/Jun/2025 10:46:37] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 10:46:37,727 [INFO] 172.20.0.29 - - [03/Jun/2025 10:46:37] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 10:46:42,298 [INFO] 172.20.0.29 - - [03/Jun/2025 10:46:42] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 10:46:53,747 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:46:53,750 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:46:53,752 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:46:53,754 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:46:53,755 [INFO] 172.20.0.29 - - [03/Jun/2025 10:46:53] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:46:53,757 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:46:53,758 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:46:53,760 [INFO] 172.20.0.29 - - [03/Jun/2025 10:46:53] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:46:57,993 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:46:57,995 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:46:57,997 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:46:57,998 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:46:58,001 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:46:58,001 [INFO] 172.20.0.29 - - [03/Jun/2025 10:46:58] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:46:58,003 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:46:58,005 [INFO] 172.20.0.29 - - [03/Jun/2025 10:46:58] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:47:00,215 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:47:00,217 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:00,219 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:00,221 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:47:00,222 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:00] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:47:00,223 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:00,225 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:00,226 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:00] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:47:05,251 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:47:05,253 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:05,254 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:05,256 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:05] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:47:05,258 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:47:05,260 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:05,262 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:05,263 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:05] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:47:08,290 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:47:08,292 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:08,293 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:08,295 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:08] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:47:08,303 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:47:08,306 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:08,308 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:08,310 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:08] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:47:10,672 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:47:10,674 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:10,676 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:10,677 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:10] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:47:10,679 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:47:10,681 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:10,684 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:10,686 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:10] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:47:11,720 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:47:11,722 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:11,724 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:11,726 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:11] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:47:11,727 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:47:11,729 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:11,731 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:11,732 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:11] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:47:12,635 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:47:12,638 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:12,640 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:12,641 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:12] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:47:12,644 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:47:12,646 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:12,648 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:12,649 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:12] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:47:15,567 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:47:15,569 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:15,571 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:47:15,572 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:15,574 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:15] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:47:15,575 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:15,577 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:15,578 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:15] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:47:18,583 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:47:18,585 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:18,587 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:18,588 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:47:18,590 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:18] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:47:18,591 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:18,593 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:18,595 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:18] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:47:20,695 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:47:20,697 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:20,698 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:20,700 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:20] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:47:20,709 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:47:20,712 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:20,714 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:20,715 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:20] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:47:25,617 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 10:47:25,620 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:25,621 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:25,623 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:25] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 10:47:25,691 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 10:47:25,693 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 10:47:25,695 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:25,697 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:25] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 10:47:30,144 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:30] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 10:47:33,913 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:47:33,915 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:47:33,917 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:33,919 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:33] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:47:33,923 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:47:33,925 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:47:33,928 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:33,929 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:33] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:47:39,981 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:47:39,983 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:47:39,985 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:39,986 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:39] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:47:39,994 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:47:39,996 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:47:39,998 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:40,000 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:40] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:47:51,243 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:47:51,245 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:47:51,247 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:51,249 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:47:51,249 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:51] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:47:51,252 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:47:51,254 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:51,255 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:51] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:47:53,759 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:47:53,761 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:47:53,764 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:47:53,765 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:47:53,767 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:47:53,768 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:53] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:47:53,770 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:47:53,771 [INFO] 172.20.0.29 - - [03/Jun/2025 10:47:53] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:48:24,331 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:48:24,333 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:48:24,335 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:48:24,337 [INFO] 172.20.0.29 - - [03/Jun/2025 10:48:24] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:48:24,338 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:48:24,340 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:48:24,342 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:48:24,344 [INFO] 172.20.0.29 - - [03/Jun/2025 10:48:24] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:48:27,091 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:48:27,093 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:48:27,095 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:48:27,096 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:48:27,099 [INFO] 172.20.0.29 - - [03/Jun/2025 10:48:27] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:48:27,099 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:48:27,102 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:48:27,104 [INFO] 172.20.0.29 - - [03/Jun/2025 10:48:27] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:51:17,102 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:51:17,104 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:51:17,106 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:51:17,107 [INFO] 172.20.0.29 - - [03/Jun/2025 10:51:17] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:51:17,109 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:51:17,111 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:51:17,112 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:51:17,113 [INFO] 172.20.0.29 - - [03/Jun/2025 10:51:17] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:51:19,532 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:51:19,534 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:51:19,536 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:51:19,538 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:51:19,539 [INFO] 172.20.0.29 - - [03/Jun/2025 10:51:19] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:51:19,540 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:51:19,542 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:51:19,543 [INFO] 172.20.0.29 - - [03/Jun/2025 10:51:19] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:51:21,874 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:51:21,876 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:51:21,878 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:51:21,881 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:51:21,882 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:51:21,883 [INFO] 172.20.0.29 - - [03/Jun/2025 10:51:21] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:51:21,884 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:51:21,886 [INFO] 172.20.0.29 - - [03/Jun/2025 10:51:21] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:51:24,344 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:51:24,346 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:51:24,348 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:51:24,351 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:51:24,351 [INFO] 172.20.0.29 - - [03/Jun/2025 10:51:24] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:51:24,353 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:51:24,355 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:51:24,356 [INFO] 172.20.0.29 - - [03/Jun/2025 10:51:24] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 10:51:26,227 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 10:51:26,229 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:51:26,230 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 10:51:26,232 [INFO] 172.20.0.29 - - [03/Jun/2025 10:51:26] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 10:51:26,249 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 10:51:26,251 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 10:51:26,253 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 10:51:26,254 [INFO] 172.20.0.29 - - [03/Jun/2025 10:51:26] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 11:04:09,070 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-03 11:04:09,071 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:09] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:09,124 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:09,415 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 11:04:09,416 [INFO] Cookie sécurisé défini pour le gérant ID : 2
+2025-06-03 11:04:09,417 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:09] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:16,520 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-03 11:04:16,521 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:16] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:16,553 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:16,844 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 11:04:16,844 [INFO] Cookie sécurisé défini pour le gérant ID : 2
+2025-06-03 11:04:16,845 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:16] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:16,966 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:17,125 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:17,258 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 11:04:17,258 [INFO] Cookie sécurisé défini pour le gérant ID : 2
+2025-06-03 11:04:17,259 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:17] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:17,302 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:17,408 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 11:04:17,408 [INFO] Cookie sécurisé défini pour le gérant ID : 2
+2025-06-03 11:04:17,409 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:17] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:17,565 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:17,584 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 11:04:17,585 [INFO] Cookie sécurisé défini pour le gérant ID : 2
+2025-06-03 11:04:17,585 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:17] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:17,744 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:17,850 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 11:04:17,850 [INFO] Cookie sécurisé défini pour le gérant ID : 2
+2025-06-03 11:04:17,851 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:17] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:17,887 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:18,024 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:18,026 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 11:04:18,027 [INFO] Cookie sécurisé défini pour le gérant ID : 2
+2025-06-03 11:04:18,028 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:18] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:18,165 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:18,171 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 11:04:18,171 [INFO] Cookie sécurisé défini pour le gérant ID : 2
+2025-06-03 11:04:18,172 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:18] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:18,308 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 11:04:18,308 [INFO] Cookie sécurisé défini pour le gérant ID : 2
+2025-06-03 11:04:18,309 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:18] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:18,448 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 11:04:18,449 [INFO] Cookie sécurisé défini pour le gérant ID : 2
+2025-06-03 11:04:18,450 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:18] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:04:23,937 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 11:04:23,938 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:23] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 11:04:23,968 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:24,259 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:24,260 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:24,261 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:24] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:26,719 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:26,877 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:27,012 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:27,012 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:27,013 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:27] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:27,039 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:27,156 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:27,160 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:27,160 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:27,162 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:27] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:27,306 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:27,327 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:27,328 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:27,329 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:27] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:27,442 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:27,442 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:27,444 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:27,444 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:27] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:27,591 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:27,591 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:27,592 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:27] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:27,599 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:27,726 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:27,727 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:27,728 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:27] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:27,830 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:27,881 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:27,881 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:27,882 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:27] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:27,983 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:28,101 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:28,113 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:28,113 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:28,114 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:28] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:28,240 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:04:28,265 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:28,266 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:28,267 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:28] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:28,390 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:28,391 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:28,392 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:28] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:28,527 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:04:28,527 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:04:28,529 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:28] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:04:56,722 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 11:04:56,723 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:56] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 11:04:56,747 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'aDMIN123§'}
+2025-06-03 11:04:57,038 [WARNING] Mot de passe incorrect ou non défini pour l’identifiant : 69
+2025-06-03 11:04:57,040 [INFO] 172.20.0.29 - - [03/Jun/2025 11:04:57] "[31m[1mPOST /login/campeur HTTP/1.1[0m" 401 -
+2025-06-03 11:05:05,031 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 11:05:05,032 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:05] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 11:05:05,054 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:05,345 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:05,346 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:05,347 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:05] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:05:06,378 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:06,648 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:06,669 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:06,670 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:06,670 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:06] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:05:06,808 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:06,932 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:06,933 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:06,934 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:06] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:05:07,047 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:07,091 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:07,092 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:07,093 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:07] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:05:07,329 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:07,330 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:07,331 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:07] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:05:07,573 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:07,841 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:07,865 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:07,865 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:07,866 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:07] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:05:08,073 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:08,125 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:08,125 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:08,126 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:08] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:05:08,342 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:08,356 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:08,356 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:08,357 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:08] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:05:08,627 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:08,628 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:08,629 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:08] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:05:08,796 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:09,050 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:09,088 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:09,088 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:09,089 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:09] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:05:09,333 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:09,333 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:09,334 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:09] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:05:09,826 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:05:10,117 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:05:10,118 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:05:10,119 [INFO] 172.20.0.29 - - [03/Jun/2025 11:05:10] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:11:52,490 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 11:11:52,491 [INFO] 172.20.0.29 - - [03/Jun/2025 11:11:52] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 11:11:52,517 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:11:52,809 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:11:52,809 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:11:52,810 [INFO] 172.20.0.29 - - [03/Jun/2025 11:11:52] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:12:03,101 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 11:12:03,102 [INFO] 172.20.0.29 - - [03/Jun/2025 11:12:03] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 11:12:03,120 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:12:03,410 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 11:12:03,411 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 11:12:03,412 [INFO] 172.20.0.29 - - [03/Jun/2025 11:12:03] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 11:12:03,588 [INFO] 172.20.0.29 - - [03/Jun/2025 11:12:03] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 11:12:06,522 [INFO] 172.20.0.29 - - [03/Jun/2025 11:12:06] "[33mOPTIONS /user/current HTTP/1.1[0m" 404 -
+2025-06-03 11:12:06,634 [INFO] 172.20.0.29 - - [03/Jun/2025 11:12:06] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 11:13:10,167 [INFO] 172.20.0.29 - - [03/Jun/2025 11:13:10] "[33mOPTIONS /user/current HTTP/1.1[0m" 404 -
+2025-06-03 11:13:10,215 [INFO] 172.20.0.29 - - [03/Jun/2025 11:13:10] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 11:13:25,488 [INFO] 172.20.0.29 - - [03/Jun/2025 11:13:25] "[33mOPTIONS /user/current HTTP/1.1[0m" 404 -
+2025-06-03 11:13:25,566 [INFO] 172.20.0.29 - - [03/Jun/2025 11:13:25] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 11:14:40,274 [INFO] 172.20.0.29 - - [03/Jun/2025 11:14:40] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 11:14:45,386 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 11:14:45,388 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:14:45,390 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:14:45,392 [INFO] 172.20.0.29 - - [03/Jun/2025 11:14:45] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 11:14:45,413 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 11:14:45,415 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:14:45,417 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:14:45,418 [INFO] 172.20.0.29 - - [03/Jun/2025 11:14:45] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 11:14:51,216 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 11:14:51,219 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:14:51,221 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:14:51,222 [INFO] 172.20.0.29 - - [03/Jun/2025 11:14:51] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 11:14:51,241 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 11:14:51,243 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:14:51,245 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:14:51,246 [INFO] 172.20.0.29 - - [03/Jun/2025 11:14:51] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 11:37:33,193 [INFO] 172.20.0.29 - - [03/Jun/2025 11:37:33] "[31m[1mGET /user/role HTTP/1.1[0m" 401 -
+2025-06-03 11:38:03,272 [INFO] Requête OPTIONS reçue sur /login/gerant.
+2025-06-03 11:38:03,272 [INFO] 172.20.0.29 - - [03/Jun/2025 11:38:03] "OPTIONS /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:38:03,315 [INFO] Tentative de connexion d'un gérant avec les données : {'identifiant': 'Admin', 'mot_de_passe': 'Admin123!'}
+2025-06-03 11:38:03,607 [INFO] Connexion réussie pour le gérant : Id=2, Identifiant=Admin
+2025-06-03 11:38:03,607 [INFO] Cookie sécurisé défini pour le gérant ID : 2
+2025-06-03 11:38:03,608 [INFO] 172.20.0.29 - - [03/Jun/2025 11:38:03] "POST /login/gerant HTTP/1.1" 200 -
+2025-06-03 11:38:03,705 [INFO] 172.20.0.29 - - [03/Jun/2025 11:38:03] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 11:38:26,398 [INFO] 172.20.0.29 - - [03/Jun/2025 11:38:26] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 11:38:29,768 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 11:38:29,770 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:38:29,772 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:38:29,774 [INFO] 172.20.0.29 - - [03/Jun/2025 11:38:29] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 11:38:29,795 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 11:38:29,797 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:38:29,799 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:38:29,800 [INFO] 172.20.0.29 - - [03/Jun/2025 11:38:29] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 11:38:32,056 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 11:38:32,058 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:38:32,060 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:38:32,061 [INFO] 172.20.0.29 - - [03/Jun/2025 11:38:32] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 11:38:32,080 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 11:38:32,082 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:38:32,084 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:38:32,085 [INFO] 172.20.0.29 - - [03/Jun/2025 11:38:32] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 11:38:50,794 [INFO] 172.20.0.29 - - [03/Jun/2025 11:38:50] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 11:39:14,546 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:14] "OPTIONS /seuils HTTP/1.1" 200 -
+2025-06-03 11:39:14,595 [INFO] Requête POST reçue pour création de seuils : {'Numero_Emplacement': 69, 'Seuil_Eau_Matin': 1, 'Seuil_Eau_Midi': 4, 'Seuil_Eau_Soir': 5, 'Seuil_Eau_Nuit': 6, 'Seuil_Electricite_Matin': 7, 'Seuil_Electricite_Midi': 8, 'Seuil_Electricite_Soir': 9, 'Seuil_Electricite_Nuit': 6}
+2025-06-03 11:39:14,637 [INFO] Seuils créés avec succès pour emplacement ID : 69
+2025-06-03 11:39:14,638 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:14] "[35m[1mPOST /seuils HTTP/1.1[0m" 201 -
+2025-06-03 11:39:18,234 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:18] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 11:39:23,767 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:23] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 11:39:33,325 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 11:39:33,327 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 11:39:33,329 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:39:33,330 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:33] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 11:39:33,353 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 11:39:33,355 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 11:39:33,357 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:39:33,358 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:33] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 11:39:45,033 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 11:39:45,035 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 11:39:45,037 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:39:45,039 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:45] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 11:39:45,066 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 11:39:45,067 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 11:39:45,069 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:39:45,071 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:45] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 11:39:48,458 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 11:39:48,461 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 11:39:48,463 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:39:48,464 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:48] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 11:39:48,483 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 11:39:48,485 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 11:39:48,487 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:39:48,489 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:48] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 11:39:50,509 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 10
+2025-06-03 11:39:50,511 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 11:39:50,513 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:39:50,514 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:50] "GET /consommation/eau/10 HTTP/1.1" 200 -
+2025-06-03 11:39:50,539 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 10
+2025-06-03 11:39:50,541 [INFO] Emplacement trouvé : ID 10 pour identifiant 10
+2025-06-03 11:39:50,543 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:39:50,544 [INFO] 172.20.0.29 - - [03/Jun/2025 11:39:50] "GET /consommation/electricite/10 HTTP/1.1" 200 -
+2025-06-03 11:40:34,750 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 11:40:34,752 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:40:34,754 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:40:34,755 [INFO] 172.20.0.29 - - [03/Jun/2025 11:40:34] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 11:40:34,778 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 11:40:34,780 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:40:34,782 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:40:34,784 [INFO] 172.20.0.29 - - [03/Jun/2025 11:40:34] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 11:40:38,329 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 11:40:38,331 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:40:38,333 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:40:38,334 [INFO] 172.20.0.29 - - [03/Jun/2025 11:40:38] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 11:40:38,362 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 11:40:38,364 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:40:38,365 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:40:38,367 [INFO] 172.20.0.29 - - [03/Jun/2025 11:40:38] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 11:40:40,041 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 11:40:40,043 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:40:40,045 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:40:40,047 [INFO] 172.20.0.29 - - [03/Jun/2025 11:40:40] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 11:40:40,065 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 11:40:40,067 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:40:40,069 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:40:40,070 [INFO] 172.20.0.29 - - [03/Jun/2025 11:40:40] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 11:40:41,947 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 11:40:41,949 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:40:41,951 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 11:40:41,953 [INFO] 172.20.0.29 - - [03/Jun/2025 11:40:41] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 11:40:41,977 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 11:40:41,979 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 11:40:41,981 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 11:40:41,983 [INFO] 172.20.0.29 - - [03/Jun/2025 11:40:41] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 12:10:35,182 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://172.20.0.39:5000
+2025-06-03 12:10:35,182 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-03 12:10:35,183 [INFO]  * Restarting with stat
+2025-06-03 12:10:35,650 [WARNING]  * Debugger is active!
+2025-06-03 12:10:35,653 [INFO]  * Debugger PIN: 213-475-960
+2025-06-03 12:14:04,943 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://172.20.0.39:5000
+2025-06-03 12:14:04,944 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-03 12:14:04,945 [INFO]  * Restarting with stat
+2025-06-03 12:14:05,415 [WARNING]  * Debugger is active!
+2025-06-03 12:14:05,418 [INFO]  * Debugger PIN: 213-475-960
+2025-06-03 14:01:38,879 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://172.20.0.39:5000
+2025-06-03 14:01:38,880 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-03 14:01:38,880 [INFO]  * Restarting with stat
+2025-06-03 14:01:39,359 [WARNING]  * Debugger is active!
+2025-06-03 14:01:39,362 [INFO]  * Debugger PIN: 609-141-948
+2025-06-03 15:13:25,542 [INFO] 172.20.0.29 - - [03/Jun/2025 15:13:25] "[33mGET / HTTP/1.1[0m" 404 -
+2025-06-03 15:13:25,713 [INFO] 172.20.0.29 - - [03/Jun/2025 15:13:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-03 15:14:04,008 [INFO] Requête OPTIONS reçue pour /login/campeur.
+2025-06-03 15:14:04,009 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:04] "[35m[1mOPTIONS /login/campeur HTTP/1.1[0m" 204 -
+2025-06-03 15:14:04,057 [INFO] Tentative de connexion d’un campeur avec les données : {'identifiant': '69', 'mot_de_passe': 'Admin123!'}
+2025-06-03 15:14:04,358 [INFO] Connexion réussie pour le campeur ID : 69
+2025-06-03 15:14:04,359 [INFO] Cookie sécurisé défini pour le campeur ID : 69
+2025-06-03 15:14:04,360 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:04] "POST /login/campeur HTTP/1.1" 200 -
+2025-06-03 15:14:04,491 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:04] "GET /user/role HTTP/1.1" 200 -
+2025-06-03 15:14:43,711 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:43] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 15:14:45,791 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:14:45,796 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:14:45,800 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:14:45,802 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:45] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:14:45,814 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:14:45,816 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:14:45,820 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:14:45,822 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:45] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:14:48,040 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:14:48,042 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:14:48,044 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:14:48,046 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:48] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:14:48,061 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:14:48,063 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:14:48,065 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:14:48,067 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:48] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:14:51,393 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:14:51,395 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:14:51,397 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:14:51,399 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:51] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:14:51,414 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:14:51,416 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:14:51,417 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:14:51,419 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:51] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:14:53,047 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:14:53,050 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:14:53,052 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:14:53,053 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:53] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:14:53,067 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:14:53,069 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:14:53,071 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:14:53,072 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:53] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:14:54,932 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:14:54,934 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:14:54,937 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:14:54,939 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:54] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:14:54,953 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:14:54,956 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:14:54,957 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:14:54,959 [INFO] 172.20.0.29 - - [03/Jun/2025 15:14:54] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:18:41,937 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:18:41,939 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:18:41,941 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:18:41,943 [INFO] 172.20.0.29 - - [03/Jun/2025 15:18:41] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:18:49,711 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:18:49,714 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:18:49,716 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:18:49,717 [INFO] 172.20.0.29 - - [03/Jun/2025 15:18:49] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:22:08,922 [INFO] 172.20.0.29 - - [03/Jun/2025 15:22:08] "[33mGET /emplacements HTTP/1.1[0m" 404 -
+2025-06-03 15:22:11,071 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:22:11,073 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:22:11,075 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:22:11,077 [INFO] 172.20.0.29 - - [03/Jun/2025 15:22:11] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:22:11,092 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:22:11,094 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:22:11,096 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:22:11,098 [INFO] 172.20.0.29 - - [03/Jun/2025 15:22:11] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:22:14,643 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:22:14,645 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:22:14,648 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:22:14,649 [INFO] 172.20.0.29 - - [03/Jun/2025 15:22:14] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:22:14,664 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:22:14,666 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:22:14,668 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:22:14,669 [INFO] 172.20.0.29 - - [03/Jun/2025 15:22:14] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:22:16,057 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:22:16,059 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:22:16,061 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:22:16,063 [INFO] 172.20.0.29 - - [03/Jun/2025 15:22:16] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:22:16,081 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:22:16,083 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:22:16,085 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:22:16,086 [INFO] 172.20.0.29 - - [03/Jun/2025 15:22:16] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:24:26,750 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:24:26,753 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:24:26,755 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:24:26,756 [INFO] 172.20.0.29 - - [03/Jun/2025 15:24:26] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:24:26,772 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:24:26,774 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:24:26,776 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:24:26,778 [INFO] 172.20.0.29 - - [03/Jun/2025 15:24:26] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:24:28,445 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:24:28,447 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:24:28,449 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:24:28,451 [INFO] 172.20.0.29 - - [03/Jun/2025 15:24:28] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:24:28,466 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:24:28,468 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:24:28,470 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:24:28,472 [INFO] 172.20.0.29 - - [03/Jun/2025 15:24:28] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:24:30,840 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:24:30,842 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:24:30,845 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:24:30,848 [INFO] 172.20.0.29 - - [03/Jun/2025 15:24:30] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:24:30,861 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:24:30,863 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:24:30,865 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:24:30,866 [INFO] 172.20.0.29 - - [03/Jun/2025 15:24:30] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:24:32,939 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:24:32,941 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:24:32,943 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:24:32,944 [INFO] 172.20.0.29 - - [03/Jun/2025 15:24:32] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:24:32,960 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:24:32,961 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:24:32,963 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:24:32,965 [INFO] 172.20.0.29 - - [03/Jun/2025 15:24:32] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-03 15:25:43,717 [INFO] Requête reçue pour consulter la consommation d'eau du campeur avec identifiant : 69
+2025-06-03 15:25:43,719 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:25:43,721 [INFO] Nombre de consommations trouvées : 9
+2025-06-03 15:25:43,723 [INFO] 172.20.0.29 - - [03/Jun/2025 15:25:43] "GET /consommation/eau/69 HTTP/1.1" 200 -
+2025-06-03 15:25:43,743 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-03 15:25:43,745 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-03 15:25:43,747 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-03 15:25:43,748 [INFO] 172.20.0.29 - - [03/Jun/2025 15:25:43] "GET /consommation/electricite/69 HTTP/1.1" 200 -
+2025-06-04 10:20:26,293 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://172.20.0.39:5000
+2025-06-04 10:20:26,293 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-04 10:20:26,294 [INFO]  * Restarting with stat
+2025-06-04 10:20:26,791 [WARNING]  * Debugger is active!
+2025-06-04 10:20:26,794 [INFO]  * Debugger PIN: 161-033-389
+2025-06-04 10:21:08,560 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 56
+2025-06-04 10:21:08,580 [WARNING] Aucun emplacement trouvé pour l’identifiant 56
+2025-06-04 10:21:08,583 [INFO] 172.20.0.29 - - [04/Jun/2025 10:21:08] "[33mGET /consommation/electricite/56 HTTP/1.1[0m" 404 -
+2025-06-04 10:21:08,674 [INFO] 172.20.0.29 - - [04/Jun/2025 10:21:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-04 10:21:16,706 [INFO] Requête GET reçue pour la consommation électrique du campeur avec identifiant : 69
+2025-06-04 10:21:16,709 [INFO] Emplacement trouvé : ID 69 pour identifiant 69
+2025-06-04 10:21:16,713 [INFO] Nombre de consommations électriques trouvées : 9
+2025-06-04 10:21:16,714 [INFO] 172.20.0.29 - - [04/Jun/2025 10:21:16] "GET /consommation/electricite/69 HTTP/1.1" 200 -
